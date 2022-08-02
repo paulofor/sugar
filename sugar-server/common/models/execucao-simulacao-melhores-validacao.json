@@ -1,0 +1,79 @@
+{
+  "name": "ExecucaoSimulacaoMelhoresValidacao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "execucaoSimulacaoId": {
+      "type": "number"
+    },
+    "simulacaoQtdeLucro": {
+      "type": "number"
+    },
+    "simulacaoQtdePrejuizo": {
+      "type": "number"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "target": {
+      "type": "number"
+    },
+    "stop": {
+      "type": "number"
+    },
+    "resultado": {
+      "type": "number"
+    },
+    "experimentoSimulacaoId": {
+      "type": "number"
+    },
+    "periodoExperimentoId": {
+      "type": "number"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "validacaoQtdeLucro": {
+      "type": "number"
+    },
+    "validacaoQtdePrejuizo": {
+      "type": "number"
+    },
+    "validacaoDiferenca": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "CriaMelhorValidacaoPeriodo": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/criaMelhorValidacaoPeriodo",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

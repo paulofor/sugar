@@ -1,0 +1,23 @@
+{
+  "name": "AplicacaoInstituicao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "saldoAtual": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "instituicaoFinanceira": {
+      "type": "belongsTo",
+      "model": "InstituicaoFinanceira",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

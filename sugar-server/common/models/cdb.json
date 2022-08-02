@@ -1,0 +1,61 @@
+{
+  "name": "CDB",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "dataVencimento": {
+      "type": "string"
+    },
+    "percentualCDI": {
+      "type": "number"
+    },
+    "percentualFixo": {
+      "type": "number"
+    },
+    "percentualIPCA": {
+      "type": "number"
+    },
+    "valorMinimo": {
+      "type": "number"
+    },
+    "dataInsercao": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereSeNaoExisteCDB": {
+      "accepts": [
+        {
+          "arg": "item",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereSeNaoExisteCDB",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

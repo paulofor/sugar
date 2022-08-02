@@ -1,0 +1,37 @@
+{
+  "name": "ExperimentoParametro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "experimentoSimulacaoId": {
+      "type": "number",
+      "id": true
+    },
+    "parametroRegraId": {
+      "type": "number",
+      "id": true
+    },
+    "inicial": {
+      "type": "number"
+    },
+    "final": {
+      "type": "number"
+    },
+    "passo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parametroRegra": {
+      "type": "belongsTo",
+      "model": "ParametroRegra",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

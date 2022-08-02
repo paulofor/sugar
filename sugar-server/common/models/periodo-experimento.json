@@ -1,0 +1,103 @@
+{
+  "name": "PeriodoExperimento",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dataStrInicial": {
+      "type": "string"
+    },
+    "dataStrFinal": {
+      "type": "string"
+    },
+    "quantidadeMes": {
+      "type": "number"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "permiteEditar": {
+      "type": "number"
+    },
+    "dataNumInicial": {
+      "type": "number"
+    },
+    "dataNumFinal": {
+      "type": "number"
+    },
+    "dataNumInicioColeta": {
+      "type": "number"
+    },
+    "dataNumInicioValidacao": {
+      "type": "number"
+    },
+    "dataNumFinalValidacao": {
+      "type": "number"
+    },
+    "quantidadeMesValidacao": {
+      "type": "number"
+    },
+    "minimoPontoValidacao": {
+      "type": "number"
+    },
+    "minimoPontoExibicao": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "experimentoSimulacaoPeriodos": {
+      "type": "hasMany",
+      "model": "ExperimentoSimulacaoPeriodo",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ObtemPeriodoParaExecucao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "periodo",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPeriodoParaExecucao",
+          "verb": "get"
+        }
+      ]
+    },
+    "CalculaInicioColeta": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/calculaInicioColeta",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "RendaFixa",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "dataVencimento": {
+      "type": "string"
+    },
+    "valorMinimo": {
+      "type": "number"
+    },
+    "dataInsercao": {
+      "type": "string"
+    },
+    "rentabilidadeAnual": {
+      "type": "number"
+    },
+    "emissor": {
+      "type": "string"
+    },
+    "distribuidor": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "string"
+    },
+    "percentual": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereSeNaoExisteFixa": {
+      "accepts": [
+        {
+          "arg": "listaItem",
+          "type": "array",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereSeNaoExisteFixa",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

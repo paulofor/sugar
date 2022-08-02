@@ -1,0 +1,58 @@
+{
+  "name": "GrupoAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "quantidade": {
+      "type": "number"
+    },
+    "codigoGrupoAcao": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "relGrupoAcaos": {
+      "type": "hasMany",
+      "model": "RelGrupoAcao",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "CriaCotacaoResultado": {
+      "accepts": [
+        {
+          "arg": "idGrupo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/criaCotacaoResultado",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

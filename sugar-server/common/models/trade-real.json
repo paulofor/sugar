@@ -1,0 +1,228 @@
+{
+  "name": "TradeReal",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "precoEntrada": {
+      "type": "number"
+    },
+    "precoSaida": {
+      "type": "number"
+    },
+    "dataNumEntrada": {
+      "type": "number"
+    },
+    "dataNumSaida": {
+      "type": "number"
+    },
+    "quantidade": {
+      "type": "number"
+    },
+    "valorEntrada": {
+      "type": "number"
+    },
+    "valorSaida": {
+      "type": "number"
+    },
+    "custoEntrada": {
+      "type": "number"
+    },
+    "custoSaida": {
+      "type": "number"
+    },
+    "fracionario": {
+      "type": "number"
+    },
+    "precoTarget": {
+      "type": "number"
+    },
+    "valorTarget": {
+      "type": "number"
+    },
+    "precoStop": {
+      "type": "number"
+    },
+    "valorStop": {
+      "type": "number"
+    },
+    "posicaoAtual": {
+      "type": "number"
+    },
+    "lucroPrejuizo": {
+      "type": "number"
+    },
+    "dataEntrada": {
+      "type": "date"
+    },
+    "dataSaida": {
+      "type": "date"
+    },
+    "valorExposicao": {
+      "type": "number"
+    },
+    "lucroAlvo": {
+      "type": "number"
+    },
+    "percentual": {
+      "type": "number"
+    },
+    "dias": {
+      "type": "number"
+    },
+    "custoTotal": {
+      "type": "number"
+    },
+    "tipo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "execucaoSimulacao": {
+      "type": "belongsTo",
+      "model": "ExecucaoSimulacao",
+      "foreignKey": ""
+    },
+    "ativoAcao": {
+      "type": "belongsTo",
+      "model": "AtivoAcao",
+      "foreignKey": "ticker"
+    },
+    "instituicaoFinanceira": {
+      "type": "belongsTo",
+      "model": "InstituicaoFinanceira",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "CalculaEstimativa": {
+      "accepts": [
+        {
+          "arg": "idTrade",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/calculaEstimativa",
+          "verb": "post"
+        }
+      ]
+    },
+    "TotalExposicao": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "valor",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totalExposicao",
+          "verb": "get"
+        }
+      ]
+    },
+    "CalculaSaida": {
+      "accepts": [
+        {
+          "arg": "idTrade",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/calculaSaida",
+          "verb": "post"
+        }
+      ]
+    },
+    "AtualizaDiaAberto": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaDiaAberto",
+          "verb": "post"
+        }
+      ]
+    },
+    "SituacaoAtual": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/situacaoAtual",
+          "verb": "get"
+        }
+      ]
+    },
+    "RiscoAtual": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/riscoAtual",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

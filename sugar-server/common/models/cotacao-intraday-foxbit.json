@@ -1,0 +1,100 @@
+{
+  "name": "CotacaoIntradayFoxbit",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "valor": {
+      "type": "number"
+    },
+    "diaNum": {
+      "type": "number"
+    },
+    "dataHora": {
+      "type": "string",
+      "id": true
+    },
+    "valorCompra": {
+      "type": "number"
+    },
+    "valorVenda": {
+      "type": "number"
+    },
+    "tickerMoeda": {
+      "type": "string"
+    },
+    "cambio": {
+      "type": "string"
+    },
+    "valorUSD": {
+      "type": "string"
+    },
+    "maximo": {
+      "type": "number"
+    },
+    "minimo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereListaFonteFoxbit": {
+      "accepts": [
+        {
+          "arg": "listaCotacao",
+          "type": "array",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/InsereListaFonteFoxbit",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemListaFoxbit": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemListaFoxbit",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

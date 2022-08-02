@@ -1,0 +1,56 @@
+{
+  "name": "ExemploTreinoAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "campoX": {
+      "type": "string"
+    },
+    "campoY": {
+      "type": "number"
+    },
+    "diaNumInicio": {
+      "type": "number"
+    },
+    "diaNumPrevisao": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereExemplo": {
+      "accepts": [
+        {
+          "arg" : "exemplo",
+          "type" : "object" ,
+          "required" : true,
+          "description" : ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereExemplo",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

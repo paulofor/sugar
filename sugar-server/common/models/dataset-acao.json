@@ -1,0 +1,29 @@
+{
+  "name": "DatasetAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tempoDias": {
+      "type": "number"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "target": {
+      "type": "number"
+    },
+    "stop": {
+      "type": "number"
+    },
+    "tipoCompraVenda": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

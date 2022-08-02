@@ -1,0 +1,120 @@
+{
+  "name": "OrdemCompra",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "precoCompra": {
+      "type": "number"
+    },
+    "valorExposicao": {
+      "type": "number"
+    },
+    "quantidade": {
+      "type": "number"
+    },
+    "fracionario": {
+      "type": "number"
+    },
+    "lucroAlvo": {
+      "type": "number"
+    },
+    "aberta": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "execucaoSimulacao": {
+      "type": "belongsTo",
+      "model": "ExecucaoSimulacao",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "TotalExposicaoGeral": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "valor",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totalExposicaoGeral",
+          "verb": "get"
+        }
+      ]
+    },
+    "TotalLucroAlvoGeral": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "valor",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totalLucroAlvoGeral",
+          "verb": "get"
+        }
+      ]
+    },
+    "TotalExposicaoLucroGeral": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "exposicao",
+          "type": "number",
+          "root": false,
+          "description": ""
+        },
+        {
+          "arg": "lucro",
+          "type": "number",
+          "root": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totalExposicaoLucroGeral",
+          "verb": "get"
+        }
+      ]
+    },
+    "LimpaGeral": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Limpa todas a ordens do dia.",
+      "http": [
+        {
+          "path": "/limpaGeral",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

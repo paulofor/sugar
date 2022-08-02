@@ -1,0 +1,24 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlDS": {
+    "host": "mysql.lojadigicom.com.br",
+    "port": 3306,
+    "database": "lojadigicom35",
+    "password": "aspNet7",
+    "name": "mysqlDS",
+    "user": "lojadigicom35",
+    "connector": "mysql"
+  },
+  "mysqlKingDS2": {
+    "host": "d555d.vps-kinghost.net",
+    "port": 3306,
+    "database": "lojadigicom35",
+    "password": "Sisacao005%",
+    "name": "mysqlKingDS2",
+    "user": "lojadigicom35",
+    "connector": "mysql"
+  }
+}

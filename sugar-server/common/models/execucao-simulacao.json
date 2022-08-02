@@ -1,0 +1,546 @@
+{
+  "name": "ExecucaoSimulacao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "quantidadeLucro": {
+      "type": "number"
+    },
+    "quantidadePrejuizo": {
+      "type": "number"
+    },
+    "target": {
+      "type": "number"
+    },
+    "stop": {
+      "type": "number"
+    },
+    "resultado": {
+      "type": "number"
+    },
+    "monitorar": {
+      "type": "number"
+    },
+    "precoEntrada": {
+      "type": "number"
+    },
+    "dataNumEntrada": {
+      "type": "number"
+    },
+    "mediaDiaTrade": {
+      "type": "number"
+    },
+    "maximoDiaTrade": {
+      "type": "number"
+    },
+    "favorito": {
+      "type": "number"
+    },
+    "primeiraEntrada": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trades": {
+      "type": "hasMany",
+      "model": "Trade",
+      "foreignKey": ""
+    },
+    "combinacaoParametro": {
+      "type": "belongsTo",
+      "model": "CombinacaoParametro",
+      "foreignKey": ""
+    },
+    "valorMonitorias": {
+      "type": "hasMany",
+      "model": "ValorMonitoria",
+      "foreignKey": ""
+    },
+    "regraSimulacao": {
+      "type": "belongsTo",
+      "model": "RegraSimulacao",
+      "foreignKey": ""
+    },
+    "ativoAcao": {
+      "type": "belongsTo",
+      "model": "AtivoAcao",
+      "foreignKey": "ticker"
+    },
+    "tradeReals": {
+      "type": "hasMany",
+      "model": "TradeReal",
+      "foreignKey": ""
+    },
+    "ordemCompras": {
+      "type": "hasMany",
+      "model": "OrdemCompra",
+      "foreignKey": ""
+    },
+    "periodoExperimento": {
+      "type": "belongsTo",
+      "model": "PeriodoExperimento",
+      "foreignKey": ""
+    },
+    "execucaoSimulacaoValidacaos": {
+      "type": "hasMany",
+      "model": "ExecucaoSimulacaoValidacao",
+      "foreignKey": ""
+    },
+    "experimentoSimulacao": {
+      "type": "belongsTo",
+      "model": "ExperimentoSimulacao",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "TotaisPorCombinacao": {
+      "accepts": [
+        {
+          "arg": "idRegraSimulacao",
+          "type": "number",
+          "required": true,
+          "description": ""
+        },
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totaisPorCombinacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemMelhoresPontoEntradaPorTikcer": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "quantidade",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "tipo",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemMelhoresPontoEntradaPorTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "CalculaMaximoMedioGeral": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/calculaMaximoMedioGeral",
+          "verb": "post"
+        }
+      ]
+    },
+    "InsereExecucaoSimulacao": {
+      "accepts": [
+        {
+          "arg": "execucao",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereExecucaoSimulacao",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaMonitorar": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaMonitorar",
+          "verb": "get"
+        }
+      ]
+    },
+    "AtualizaMonitoria": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "diaNum",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "preco",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaMonitoria",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemMonitorarPorId": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "execucao",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemMonitorarPorId",
+          "verb": "get"
+        }
+      ]
+    },
+    "LigaMonitoria": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Faz todos os procedimentos necessários para a criação de um novo item de monitoria",
+      "http": [
+        {
+          "path": "/ligaMonitoria",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaNovaMonitoria": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "listaItem",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Retorna todas as execuções que foram marcadas recentemente para monitoria e não estão com ValorMonitoria ainda.",
+      "http": [
+        {
+          "path": "/listaNovaMonitoria",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemProximoMonitorar": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "execucao",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemProximoMonitorar",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorValidacaoPeriodo": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "melhores",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorValidacaoPeriodo",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemComRegraParametros": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemComRegraParametros",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorValidacaoPeriodoFlat": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorValidacaoPeriodoFlat",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorValidacaoPeriodoFlatPorTicker": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "limitePorTicker",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "tipo",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorValidacaoPeriodoFlatPorTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "MonitorarMelhorValidacaoPeriodoFlatPorTicker": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "limitePorTicker",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "tipo",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/monitorarMelhorValidacaoPeriodoFlatPorTicker",
+          "verb": "post"
+        }
+      ]
+    },
+    "ConsolidadoPorResultado": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/consolidadoPorResultado",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "name": "ValorMonitoria",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "valorEntrada": {
+      "type": "number"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "diaNumEntrada": {
+      "type": "number"
+    },
+    "situacao": {
+      "type": "string"
+    },
+    "valorTarget": {
+      "type": "number"
+    },
+    "valorStop": {
+      "type": "number"
+    },
+    "posicao": {
+      "type": "number"
+    },
+    "pontoEntrada": {
+      "type": "number"
+    },
+    "quantidadeDiaTrade": {
+      "type": "number"
+    },
+    "contaTrade": {
+      "type": "number"
+    },
+    "contaTradeLucro": {
+      "type": "number"
+    },
+    "contaTradePrejuizo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "execucaoSimulacao": {
+      "type": "belongsTo",
+      "model": "ExecucaoSimulacao",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "InsereMonitoria": {
+      "accepts": [
+        {
+          "arg": "execucao",
+          "type": "object",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "diaNum",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "preco",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereMonitoria",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemComCotacao": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "listaSaida",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemComCotacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "TrataSituacao": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/trataSituacao",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

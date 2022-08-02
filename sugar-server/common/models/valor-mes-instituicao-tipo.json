@@ -1,0 +1,53 @@
+{
+  "name": "ValorMesInstituicaoTipo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dataReferenciaNum": {
+      "type": "number"
+    },
+    "valor": {
+      "type": "number"
+    },
+    "valorPercentual": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tipoAplicacao": {
+      "type": "belongsTo",
+      "model": "TipoAplicacao",
+      "foreignKey": ""
+    },
+    "instituicaoFinanceira": {
+      "type": "belongsTo",
+      "model": "InstituicaoFinanceira",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "TotaisMesCorrente": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "listaTipo",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/totaisMesCorrente",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

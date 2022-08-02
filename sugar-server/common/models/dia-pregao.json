@@ -1,0 +1,329 @@
+{
+  "name": "DiaPregao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "diaNum": {
+      "type": "number",
+      "id": true
+    },
+    "mes": {
+      "type": "number"
+    },
+    "ano": {
+      "type": "number"
+    },
+    "dataStr": {
+      "type": "string"
+    },
+    "data": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cotacaoIntradayAcaos": {
+      "type": "hasMany",
+      "model": "CotacaoIntradayAcao",
+      "foreignKey": "diaNum"
+    },
+    "cotacaoIntradayAcaoResultados": {
+      "type": "hasMany",
+      "model": "CotacaoIntradayAcaoResultado",
+      "foreignKey": "diaNum"
+    },
+    "cotacaoIntradayMercadorias": {
+      "type": "hasMany",
+      "model": "CotacaoIntradayMercadoria",
+      "foreignKey": "diaNum"
+    },
+    "cotacaoDiarioAcaos": {
+      "type": "hasMany",
+      "model": "CotacaoDiarioAcao",
+      "foreignKey": "diaNum"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ObtemIntradayPorTicker": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "returns": [
+        {
+          "arg": "cotacao",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemIntradayPorTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemDiaTicker": {
+      "accepts": [
+        {
+          "arg": "diaNum",
+          "type": "number",
+          "required": true,
+          "description": ""
+        },
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "arg": "quantidadeDia",
+          "type": "number",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "cotacao",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemDiaTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "CriaDatasAno": {
+      "accepts": [
+        {
+          "arg": "ano",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/criaDatasAno",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemProximo": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "dia",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemProximo",
+          "verb": "get"
+        }
+      ]
+    },
+    "PeriodoAtualizacaoMonitoria": {
+      "accepts": [
+        {
+          "arg": "idExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/periodoAtualizacaoMonitoria",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemIntradayTickerPeriodo": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "dataNumInicio",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemIntradayTickerPeriodo",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemIntradayResultadoTickerPeriodo": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "dataNumInicio",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemIntradayResultadoTickerPeriodo",
+          "verb": "get"
+        }
+      ]
+    },
+    "ComFalhaDiario": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/comFalhaDiario",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemIntradayResultadoValor": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "dataNumInicio",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idRegraProjecao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "listaDia",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemIntradayResultadoValor",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemIntradayResultadoDataset": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "dataNumInicio",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemIntradayResultadoDataset",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

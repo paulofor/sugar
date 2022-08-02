@@ -1,0 +1,217 @@
+{
+  "name": "CotacaoIntradayAcaoResultado",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "number"
+    },
+    "hora": {
+      "type": "string"
+    },
+    "dia": {
+      "type": "date"
+    },
+    "dataHora": {
+      "type": "date"
+    },
+    "diaNum": {
+      "type": "number"
+    },
+    "diaHoraNumTicker": {
+      "type": "string",
+      "id": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cotacaoIntradayAcaoResultadoValors": {
+      "type": "hasMany",
+      "model": "CotacaoIntradayAcaoResultadoValor",
+      "foreignKey": "diaHoraNumTicker"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ObtemPorTickerPeriodo": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": true,
+          "descripion": ""
+        },
+        {
+          "arg": "dataNumInicio",
+          "type": "number",
+          "required": true,
+          "descripion": ""
+        },
+        {
+          "arg": "dataNumFinal",
+          "type": "number",
+          "required": true,
+          "descripion": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPorTickerPeriodo",
+          "verb": "get"
+        }
+      ]
+    },
+    "CriaTickerAno": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "ano",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/criaTickerAno",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemProximoHorarioVazio": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "cotacao",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemProximoHorarioVazio",
+          "verb": "get"
+        }
+      ]
+    },
+    "GravaVaziaComAnterior": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/gravaVaziaComAnterior",
+          "verb": "post"
+        }
+      ]
+    },
+    "AtualizaTargetStopDia": {
+      "accepts": [
+        {
+          "arg": "listaCotacao",
+          "type": "array",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaTargetStopDia",
+          "verb": "put"
+        }
+      ]
+    },
+    "ObtemListaComValor": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idRegraProjecao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemListaComValor",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

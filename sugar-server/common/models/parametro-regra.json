@@ -1,0 +1,61 @@
+{
+  "name": "ParametroRegra",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tipo": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "atributoClasse": {
+      "type": "string"
+    },
+    "siglaDescricao": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "valorParametros": {
+      "type": "hasMany",
+      "model": "ValorParametro",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ObtemPorExperimentoComValor": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "listaSaida",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPorExperimentoComValor",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

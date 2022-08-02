@@ -1,0 +1,418 @@
+{
+  "name": "ExperimentoSimulacao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "codigo": {
+      "type": "string"
+    },
+    "dataCriacao": {
+      "type": "string"
+    },
+    "dataExecucao": {
+      "type": "string"
+    },
+    "quantidadeCombinacao": {
+      "type": "number"
+    },
+    "posicaoExecucao": {
+      "type": "number"
+    },
+    "permiteEdicao": {
+      "type": "number"
+    },
+    "emExecucao": {
+      "type": "number"
+    },
+    "emValidacao": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "regraSimulacao": {
+      "type": "belongsTo",
+      "model": "RegraSimulacao",
+      "foreignKey": ""
+    },
+    "experimentoParametros": {
+      "type": "hasMany",
+      "model": "ExperimentoParametro",
+      "foreignKey": ""
+    },
+    "experimentoAcaos": {
+      "type": "hasMany",
+      "model": "ExperimentoAcao",
+      "foreignKey": ""
+    },
+    "grupoAcao": {
+      "type": "belongsTo",
+      "model": "GrupoAcao",
+      "foreignKey": ""
+    },
+    "combinacaoParametros": {
+      "type": "hasMany",
+      "model": "CombinacaoParametro",
+      "foreignKey": ""
+    },
+    "valorParametros": {
+      "type": "hasMany",
+      "model": "ValorParametro",
+      "foreignKey": ""
+    },
+    "execucaoSimulacaos": {
+      "type": "hasMany",
+      "model": "ExecucaoSimulacao",
+      "foreignKey": ""
+    },
+    "experimentoSimulacaoPeriodos": {
+      "type": "hasMany",
+      "model": "ExperimentoSimulacaoPeriodo",
+      "foreignKey": ""
+    },
+    "periodoExperimento": {
+      "type": "belongsTo",
+      "model": "PeriodoExperimento",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "GerarCombinacoes": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/gerarCombinacoes",
+          "verb": "post"
+        }
+      ]
+    },
+    "CarregaParaSimulacao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "experimento",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/carregaParaSimulacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "FechaExperimento": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/fechaExperimento",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemExecucao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "experimento",
+          "type": "object",
+          "root": false,
+          "description": ""
+        },
+        {
+          "arg": "melhoresExecucao",
+          "type": "array",
+          "root": false,
+          "description": ""
+        },
+        {
+          "arg": "combinacaoProcessada",
+          "type": "number",
+          "root": false,
+          "description": ""
+        },
+        {
+          "arg": "execucaoCriada",
+          "type": "number",
+          "root": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemExecucao",
+          "verb": "get"
+        }
+      ]
+    },
+    "GerarCombinacoesBloco": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "inicioBloco",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "finalBloco",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/gerarCombinacoesBloco",
+          "verb": "post"
+        }
+      ]
+    },
+    "InicioExecucao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": false,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/inicioExecucao",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemParaSimulacao": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "experimento",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemParaSimulacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemParaValidacao": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "experimento",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemParaValidacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "ColocaEmExecucao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/colocaEmExecucao",
+          "verb": "post"
+        }
+      ]
+    },
+    "ColocaEmValidacao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/colocaEmValidacao",
+          "verb": "post"
+        }
+      ]
+    },
+    "ProcessaPermiteEdicaoExperimento": {
+      "accepts": [],
+      "returns": [],
+      "description": "",
+      "http": [
+        {
+          "path": "/processaPermiteEdicaoExperimento",
+          "verb": "post"
+        }
+      ]
+    },
+    "ValidarFechar": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/validarFechar",
+          "verb": "post"
+        }
+      ]
+    },
+    "Reinicializa": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/reinicializa",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

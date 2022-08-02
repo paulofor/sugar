@@ -1,0 +1,210 @@
+{
+  "name": "CotacaoIntradayAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "valor": {
+      "type": "number"
+    },
+    "dataHoraNegStr": {
+      "type": "string"
+    },
+    "dataHora": {
+      "type": "date",
+      "id": true
+    },
+    "dia": {
+      "type": "date"
+    },
+    "posicaoDia": {
+      "type": "number"
+    },
+    "intervalo": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "CotacaoMaisRecente": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "listaTempo",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/cotacaoMaisRecente",
+          "verb": "get"
+        }
+      ]
+    },
+    "InsereValorHorarioAcao": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "valor",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "horario",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereValorHorarioAcao",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemPorDiaTicker": {
+      "accepts": [
+        {
+          "arg": "dia",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "cotacao",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPorDiaTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "ListaMaisRecente": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaMaisRecente",
+          "verb": "get"
+        }
+      ]
+    },
+    "AtualPorTicker": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "quantidade",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualPorTicker",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemCotacaoAnterior": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "dataHora",
+          "type": "date",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "hora",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "cotacao",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemCotacaoAnterior",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

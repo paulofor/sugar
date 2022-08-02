@@ -1,0 +1,365 @@
+{
+  "name": "AtivoAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "Counts": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "nome": {
+      "type": "string"
+    },
+    "intraday5": {
+      "type": "number"
+    },
+    "intraday15": {
+      "type": "number"
+    },
+    "intraday30": {
+      "type": "number"
+    },
+    "fechamentoAtual": {
+      "type": "number"
+    },
+    "max1Mes": {
+      "type": "number"
+    },
+    "min1Mes": {
+      "type": "number"
+    },
+    "spread1Mes": {
+      "type": "number"
+    },
+    "mediaNegocio1Mes": {
+      "type": "number"
+    },
+    "max3Mes": {
+      "type": "number"
+    },
+    "min3Mes": {
+      "type": "number"
+    },
+    "spread3Mes": {
+      "type": "number"
+    },
+    "mediaNegocio3Mes": {
+      "type": "number"
+    },
+    "intraday10": {
+      "type": "number"
+    },
+    "possuiIntradayResultado": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "relGrupoAcaos": {
+      "type": "hasMany",
+      "model": "RelGrupoAcao",
+      "foreignKey": "ticker"
+    },
+    "execucaoSimulacaos": {
+      "type": "hasMany",
+      "model": "ExecucaoSimulacao",
+      "foreignKey": "ticker"
+    },
+    "cotacaoIntradayAcaoResultados": {
+      "type": "hasMany",
+      "model": "CotacaoIntradayAcaoResultado",
+      "foreignKey": "ticker"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "ListaColetaIntraday": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaColetaIntraday",
+          "verb": "get"
+        }
+      ]
+    },
+    "InsereAcaoIndice": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "nome",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "tipo",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "quantidadeTeorica",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "participacao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "indice",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereAcaoIndice",
+          "verb": "post"
+        }
+      ]
+    },
+    "AtualizaPosDiario": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/atualizaPosDiario",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaPorGrupo": {
+      "accepts": [
+        {
+          "arg": "idGrupo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "listaAcao",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaPorGrupo",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorSimulacaoPorPeriodo": {
+      "accepts": [
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "cortePontos",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "qtdeExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorSimulacaoPorPeriodo",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorSimulacaoPorExperimento": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idPeriodo",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "cortePontos",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "qtdeExecucao",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorSimulacaoPorExperimento",
+          "verb": "get"
+        }
+      ]
+    },
+    "MelhorParaValidacao": {
+      "accepts": [
+        {
+          "arg": "idExperimento",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "listaAtivo",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/melhorParaValidacao",
+          "verb": "get"
+        }
+      ]
+    },
+    "ListaComResultadoMaisRecente": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaComResultadoMaisRecente",
+          "verb": "get"
+        }
+      ]
+    },
+    "VerificaPossuiResultado": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "verificaPossuiResultado",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaPorNomeGrupo": {
+      "accepts": [
+        {
+          "arg": "nomeGrupo",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaPorNomeGrupo",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

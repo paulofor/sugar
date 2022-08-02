@@ -1,0 +1,29 @@
+{
+  "name": "StartupFundo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "startupInvestimentos": {
+      "type": "hasMany",
+      "model": "StartupInvestimento",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

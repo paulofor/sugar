@@ -1,0 +1,262 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ativo": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoOpcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoMercadoria": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoImobiliario": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayOpcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayImobiliario": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayMercadoria": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "DataSet": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtributoDataSet": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "StartupFundo": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "StartupEmpresa": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "StartupInvestimento": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "IdeiaExperimento": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "DiaPregao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "RegraSimulacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ParametroRegra": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExperimentoSimulacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExperimentoParametro": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExperimentoAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "GrupoAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "RelGrupoAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoDiarioAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CombinacaoParametro": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ValorParametro": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExecucaoSimulacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "Trade": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ValorMonitoria": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "TradeReal": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "PeriodoExperimento": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "OrdemCompra": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExperimentoSimulacaoPeriodo": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "FundoImobiliario": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CDB": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "RendaFixa": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AluguelFundoImobiliario": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "TipoAplicacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "InstituicaoFinanceira": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoIndice": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayIndice": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExecucaoSimulacaoValidacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayAcaoResultado": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoDiarioIndice": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AplicacaoInstituicao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "AtivoCriptomoeda": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayMercadoBitcoin": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "MovimentacaoValorAplicado": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ValorMesInstituicaoTipo": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "RegraProjecao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayAcaoResultadoValor": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExecucaoSimulacaoMelhoresValidacao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "CotacaoIntradayFoxbit": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "DatasetAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "ExemploTreinoAcao": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  },
+  "RegraProjecaoTotalMes": {
+    "dataSource": "mysqlKingDS2",
+    "public": true
+  }
+}

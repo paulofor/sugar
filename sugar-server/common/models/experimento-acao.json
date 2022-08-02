@@ -1,0 +1,28 @@
+{
+  "name": "ExperimentoAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "experimentoSimulacaoId": {
+      "type": "number",
+      "id": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ativoAcao": {
+      "type": "belongsTo",
+      "model": "AtivoAcao",
+      "foreignKey": "ticker"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

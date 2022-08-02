@@ -1,0 +1,100 @@
+{
+  "name": "CotacaoIntradayMercadoBitcoin",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "valor": {
+      "type": "number"
+    },
+    "diaNum": {
+      "type": "number"
+    },
+    "dataHora": {
+      "type": "string",
+      "id": true
+    },
+    "maximo": {
+      "type": "number"
+    },
+    "minimo": {
+      "type": "number"
+    },
+    "tickerMoeda": {
+      "type": "string"
+    },
+    "ofertaCompra": {
+      "type": "number"
+    },
+    "ofertaVenda": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "dataInt": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereItem": {
+      "accepts": [
+        {
+          "arg": "item",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereItem",
+          "verb": "post"
+        }
+      ]
+    },
+    "FechamentosPorDiaNum": {
+      "accepts": [
+        {
+          "arg": "diaNum",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/fechamentosPorDiaNum",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

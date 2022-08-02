@@ -1,0 +1,238 @@
+{
+  "name": "CotacaoIntradayAcaoResultadoValor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "diaNum": {
+      "type": "number",
+      "id": true
+    },
+    "hora": {
+      "type": "string",
+      "id": true
+    },
+    "resultado": {
+      "type": "number"
+    },
+    "diaHoraNumTicker": {
+      "type": "string"
+    },
+    "dias": {
+      "type": "number"
+    },
+    "regraProjecaoId": {
+      "type": "number",
+      "id": true
+    },
+    "dataHoraInsercao": {
+      "type": "date"
+    },
+    "valorSaida": {
+      "type": "number"
+    },
+    "valorEntrada": {
+      "type": "number"
+    },
+    "diaNumSaida": {
+      "type": "number"
+    },
+    "dataHora": {
+      "type": "date"
+    },
+    "valorSuperior": {
+      "type": "number"
+    },
+    "valorInferior": {
+      "type": "number"
+    },
+    "anoMesNum" : {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "ObtemResultadoRegraData": {
+      "accepts": [
+        {
+          "arg": "codigoRegra",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "diaNumInicial",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "diaNumFinal",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "dataframe",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemResultadoRegraData",
+          "verb": "get"
+        }
+      ]
+    },
+    "InsereLista": {
+      "accepts": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereLista",
+          "verb": "post"
+        }
+      ]
+    },
+    "ObtemListaTickerRegra": {
+      "accepts": [
+        {
+          "arg": "ticker",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "idRegra",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemListaTickerRegra",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemPorRegraData": {
+      "accepts": [
+        {
+          "arg": "idRegra",
+          "type": "number",
+          "required": false,
+          "description": ""
+        },
+        {
+          "arg": "diaNum",
+          "type": "number",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemPorRegraData",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemDatasPorGrupo": {
+      "accepts": [
+        {
+          "arg": "codigoGrupo",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemDatasPorGrupo",
+          "verb": "get"
+        }
+      ]
+    },
+    "ObtemDatasPorGrupoComAtraso": {
+      "accepts": [
+        {
+          "arg": "codigoGrupo",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "lista",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/obtemDatasPorGrupoComAtraso",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "CotacaoDiarioAcao",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string",
+      "id": true
+    },
+    "data": {
+      "type": "string",
+      "id": true
+    },
+    "abertura": {
+      "type": "number"
+    },
+    "maximo": {
+      "type": "number"
+    },
+    "minimo": {
+      "type": "number"
+    },
+    "fechamento": {
+      "type": "number"
+    },
+    "negocios": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "percentual": {
+      "type": "number"
+    },
+    "diaNum": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

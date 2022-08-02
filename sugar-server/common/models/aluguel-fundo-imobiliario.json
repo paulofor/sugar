@@ -1,0 +1,86 @@
+{
+  "name": "AluguelFundoImobiliario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ticker": {
+      "type": "string"
+    },
+    "valor": {
+      "type": "number"
+    },
+    "dataCom": {
+      "type": "string"
+    },
+    "dataPagamento": {
+      "type": "string"
+    },
+    "cotacao": {
+      "type": "number"
+    },
+    "percentual": {
+      "type": "number"
+    },
+    "tipo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "InsereSeNaoExisteAluguelFundo": {
+      "accepts": [
+        {
+          "arg": "listaItem",
+          "type": "array",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereSeNaoExisteAluguelFundo",
+          "verb": "post"
+        }
+      ]
+    },
+    "InsereSeNaoExisteItemAluguel": {
+      "accepts": [
+        {
+          "arg": "itemAluguel",
+          "type": "object",
+          "required": false,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "saida",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/insereSeNaoExisteItemAluguel",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}
