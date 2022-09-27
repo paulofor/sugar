@@ -38,6 +38,11 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { ProjetoListaComponent } from './projeto-lista/projeto-lista.component';
 import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
 import { ProjetoDetalheComponent } from './projeto-detalhe/projeto-detalhe.component';
+import { ExperienciaListaComponent } from './experiencia-lista/experiencia-lista.component';
+import { ExperienciaEditaComponent } from './experiencia-edita/experiencia-edita.component';
+import { ItemCustoListaComponent } from './item-custo-lista/item-custo-lista.component';
+import { ItemCustoEditaComponent } from './item-custo-edita/item-custo-edita.component';
+import { ItemCustoDetalheComponent } from './item-custo-detalhe/item-custo-detalhe.component';
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 
@@ -51,6 +56,11 @@ registerLocaleData(localePt, 'pt-BR');
     ProjetoListaComponent,
     ProjetoEditaComponent,
     ProjetoDetalheComponent,
+    ExperienciaListaComponent,
+    ExperienciaEditaComponent,
+    ItemCustoListaComponent,
+    ItemCustoEditaComponent,
+    ItemCustoDetalheComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +109,9 @@ registerLocaleData(localePt, 'pt-BR');
     //{ provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
   ],
   entryComponents : [
+    ProjetoEditaComponent,
+    ExperienciaEditaComponent,
+    ItemCustoEditaComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,29 @@
+<div class="dgc-painel">
+  <div class="dgc-painel-header">
+      <span>Experiências</span>
+      <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
+  </div>
+  <div *ngIf="listaBase">
+      <div class="dgc-card" *ngFor="let item of listaBase">
+          <div class="dgc-card-header">
+            <span>{{item.nome}}</span>
+            <span class="dgc-direita">{{item.valor | currency : 'BRL'}}</span>
+          </div>
+          
+          <div class="dgc-card-detalhe">
+            <table>
+              <tr *ngFor="let custo of item.itemCustos">
+                <td width="70%">{{custo.nome}}</td>
+                <td width="20%">{{custo.valor | number: '1.2-2'}}</td>
+                <td width="10%"><a (click)="dialogo1({'item' : custo})">alterar</a></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="dgc-card-comandos">
+              <button class="btn-primary btn-sm btn" (click)="dialogo1({'origem' : item})">Item Custo</button>
+              <button class="btn-primary btn-sm btn" (click)="edita(item)">Editar</button>
+          </div>
+      </div>
+  </div>
+</div>

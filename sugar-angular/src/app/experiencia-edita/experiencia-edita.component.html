@@ -1,11 +1,11 @@
-<h2 *ngIf="item" mat-dialog-title>Projetos</h2>
+<h2 *ngIf="item" mat-dialog-title>Experiência</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
 
     <mat-form-field class="example-full-width">
-      <input matInput maxlength="20" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+      <input matInput maxlength="60" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
     </mat-form-field>
    
 

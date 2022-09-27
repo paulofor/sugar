@@ -1,14 +1,26 @@
 /* tslint:disable */
+import {
+  Projeto,
+  ItemCusto
+} from '../index';
 
 declare var Object: any;
 export interface ExperienciaInterface {
   "nome"?: string;
+  "valor"?: number;
   "id"?: number;
+  "projetoId"?: number;
+  projeto?: Projeto;
+  itemCustos?: ItemCusto[];
 }
 
 export class Experiencia implements ExperienciaInterface {
   "nome": string;
+  "valor": number;
   "id": number;
+  "projetoId": number;
+  projeto: Projeto;
+  itemCustos: ItemCusto[];
   constructor(data?: ExperienciaInterface) {
     Object.assign(this, data);
   }
@@ -46,12 +58,36 @@ export class Experiencia implements ExperienciaInterface {
           name: 'nome',
           type: 'string'
         },
+        "valor": {
+          name: 'valor',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
+        "projetoId": {
+          name: 'projetoId',
+          type: 'number'
+        },
       },
       relations: {
+        projeto: {
+          name: 'projeto',
+          type: 'Projeto',
+          model: 'Projeto',
+          relationType: 'belongsTo',
+                  keyFrom: 'projetoId',
+          keyTo: 'id'
+        },
+        itemCustos: {
+          name: 'itemCustos',
+          type: 'ItemCusto[]',
+          model: 'ItemCusto',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'experienciaId'
+        },
       }
     }
   }

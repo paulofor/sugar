@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ExperienciaListaComponent } from '../experiencia-lista/experiencia-lista.component';
 
 
 import { HomeComponent } from '../home/home.component';
@@ -12,6 +13,8 @@ export const routes : Routes = [
     { path: 'projetoLista' , component: ProjetoListaComponent },
     { path: 'projetoDetalhe/:id' , component : ProjetoDetalheComponent },
 
+    { path: 'experienciaLista/:idProjeto' , component : ExperienciaListaComponent },
+ 
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

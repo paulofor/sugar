@@ -8,10 +8,24 @@
   "properties": {
     "nome": {
       "type": "string"
+    },
+    "valor" : {
+      "type": "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "projeto": {
+      "type": "belongsTo",
+      "model": "Projeto",
+      "foreignKey": ""
+    },
+    "itemCustos": {
+      "type": "hasMany",
+      "model": "ItemCusto",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

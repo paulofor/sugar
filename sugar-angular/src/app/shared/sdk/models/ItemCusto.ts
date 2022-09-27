@@ -5,12 +5,14 @@ export interface ItemCustoInterface {
   "nome"?: string;
   "valor"?: number;
   "id"?: number;
+  "experienciaId"?: number;
 }
 
 export class ItemCusto implements ItemCustoInterface {
   "nome": string;
   "valor": number;
   "id": number;
+  "experienciaId": number;
   constructor(data?: ItemCustoInterface) {
     Object.assign(this, data);
   }
@@ -54,6 +56,10 @@ export class ItemCusto implements ItemCustoInterface {
         },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "experienciaId": {
+          name: 'experienciaId',
           type: 'number'
         },
       },
