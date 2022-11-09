@@ -11,6 +11,24 @@
     },
     "valor": {
       "type": "number"
+    },
+    "imagem1": {
+      "type": "string"
+    },
+    "imagem2": {
+      "type": "string"
+    },
+    "imagem3": {
+      "type": "string"
+    },
+    "imagem4": {
+      "type": "string"
+    },
+    "imagem5": {
+      "type": "string"
+    },
+    "imagem6": {
+      "type": "string"
     }
   },
   "validations": [],

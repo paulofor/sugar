@@ -1,28 +1,20 @@
 {
-  "name": "Experiencia",
+  "name": "Baby",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "nome": {
+    "email": {
       "type": "string"
-    },
-    "valor": {
-      "type": "number"
     }
   },
   "validations": [],
   "relations": {
-    "projeto": {
-      "type": "belongsTo",
-      "model": "Projeto",
-      "foreignKey": ""
-    },
-    "itemCustos": {
+    "respostaFormularios": {
       "type": "hasMany",
-      "model": "ItemCusto",
+      "model": "RespostaFormulario",
       "foreignKey": ""
     }
   },

@@ -1,3 +1,51 @@
-<p>
-  item-custo-detalhe works!
-</p>
+
+<div class="dgc-painel" *ngIf="itemCusto">
+  <div class="dgc-painel-header">
+      <span>{{itemCusto.nome}}</span>
+      <span class="dgc-direita">
+        {{ itemCusto.valor | currency : 'BRL'}}
+        <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="altera()">alterar</button>
+      </span>
+      
+  </div>
+  <div class="">
+    <div >
+      <img *ngIf="itemCusto.imagem1" src="{{itemCusto.imagem1}}" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(itemCusto,'imagem1')">imagem</button>
+  </div>
+  <div class="">
+    <div >
+      <img *ngIf="itemCusto.imagem2" src="{{itemCusto.imagem2}}" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(itemCusto,'imagem2')">imagem</button>
+  </div>
+  <div class="">
+    <div >
+      <img *ngIf="itemCusto.imagem3" src="{{itemCusto.imagem3}}" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(itemCusto,'imagem3')">imagem</button>
+  </div>
+  <div class="">
+    <div >
+      <img *ngIf="itemCusto.imagem4" src="{{itemCusto.imagem4}}" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(itemCusto,'imagem4')">imagem</button>
+  </div>
+  <div class="">
+    <div >
+      <img *ngIf="itemCusto.imagem5" src="{{itemCusto.imagem5}}" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(itemCusto,'imagem5')">imagem</button>
+  </div>
+</div>

@@ -46,5 +46,29 @@
   "ItemCusto": {
     "dataSource": "mysqlDS",
     "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "deleteAll": false,
+          "deleteById": false
+        }
+      }
+    }
+  },
+  "PerguntaFormulario": {
+    "dataSource": "mysqlDS",
+    "public": true
+  },
+  "Baby": {
+    "dataSource": "mysqlDS",
+    "public": true
+  },
+  "RespostaFormulario": {
+    "dataSource": "mysqlDS",
+    "public": true
   }
 }

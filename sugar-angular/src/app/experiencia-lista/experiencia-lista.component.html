@@ -13,7 +13,9 @@
           <div class="dgc-card-detalhe">
             <table>
               <tr *ngFor="let custo of item.itemCustos">
-                <td width="70%">{{custo.nome}}</td>
+                <td width="70%">
+                  <span class="dgc-link" routerLink="/itemCustoDetalhe/{{custo.id}}">{{custo.nome}}</span>
+                </td>
                 <td width="20%">{{custo.valor | number: '1.2-2'}}</td>
                 <td width="10%"><a (click)="dialogo1({'item' : custo})">alterar</a></td>
               </tr>

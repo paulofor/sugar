@@ -1,28 +1,20 @@
 {
-  "name": "Experiencia",
+  "name": "RespostaFormulario",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "nome": {
-      "type": "string"
-    },
-    "valor": {
+    "valorResposta": {
       "type": "number"
     }
   },
   "validations": [],
   "relations": {
-    "projeto": {
+    "perguntaFormulario": {
       "type": "belongsTo",
-      "model": "Projeto",
-      "foreignKey": ""
-    },
-    "itemCustos": {
-      "type": "hasMany",
-      "model": "ItemCusto",
+      "model": "PerguntaFormulario",
       "foreignKey": ""
     }
   },

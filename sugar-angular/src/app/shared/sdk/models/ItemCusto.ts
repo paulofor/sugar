@@ -4,6 +4,12 @@ declare var Object: any;
 export interface ItemCustoInterface {
   "nome"?: string;
   "valor"?: number;
+  "imagem1"?: string;
+  "imagem2"?: string;
+  "imagem3"?: string;
+  "imagem4"?: string;
+  "imagem5"?: string;
+  "imagem6"?: string;
   "id"?: number;
   "experienciaId"?: number;
 }
@@ -11,6 +17,12 @@ export interface ItemCustoInterface {
 export class ItemCusto implements ItemCustoInterface {
   "nome": string;
   "valor": number;
+  "imagem1": string;
+  "imagem2": string;
+  "imagem3": string;
+  "imagem4": string;
+  "imagem5": string;
+  "imagem6": string;
   "id": number;
   "experienciaId": number;
   constructor(data?: ItemCustoInterface) {
@@ -53,6 +65,30 @@ export class ItemCusto implements ItemCustoInterface {
         "valor": {
           name: 'valor',
           type: 'number'
+        },
+        "imagem1": {
+          name: 'imagem1',
+          type: 'string'
+        },
+        "imagem2": {
+          name: 'imagem2',
+          type: 'string'
+        },
+        "imagem3": {
+          name: 'imagem3',
+          type: 'string'
+        },
+        "imagem4": {
+          name: 'imagem4',
+          type: 'string'
+        },
+        "imagem5": {
+          name: 'imagem5',
+          type: 'string'
+        },
+        "imagem6": {
+          name: 'imagem6',
+          type: 'string'
         },
         "id": {
           name: 'id',

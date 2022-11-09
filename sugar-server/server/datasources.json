@@ -11,5 +11,11 @@
     "name": "mysqlDS",
     "user": "sugar",
     "connector": "mysql"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "/home/digicom/apps_nodejs/validador-server/server/storage"
   }
 }

@@ -43,6 +43,7 @@ import { ExperienciaEditaComponent } from './experiencia-edita/experiencia-edita
 import { ItemCustoListaComponent } from './item-custo-lista/item-custo-lista.component';
 import { ItemCustoEditaComponent } from './item-custo-edita/item-custo-edita.component';
 import { ItemCustoDetalheComponent } from './item-custo-detalhe/item-custo-detalhe.component';
+import { ImagemItemCustoUploadComponent } from './imagem-item-custo-upload/imagem-item-custo-upload.component';
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 
@@ -61,6 +62,7 @@ registerLocaleData(localePt, 'pt-BR');
     ItemCustoListaComponent,
     ItemCustoEditaComponent,
     ItemCustoDetalheComponent,
+    ImagemItemCustoUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,7 +113,8 @@ registerLocaleData(localePt, 'pt-BR');
   entryComponents : [
     ProjetoEditaComponent,
     ExperienciaEditaComponent,
-    ItemCustoEditaComponent
+    ItemCustoEditaComponent,
+    ImagemItemCustoUploadComponent
   ],
   bootstrap: [AppComponent]
 })
