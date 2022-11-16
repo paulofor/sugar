@@ -8,7 +8,17 @@
   "properties": {
     "email": {
       "type": "string"
+    },
+    "nomeApelido" : {
+      "type": "string"
+    },
+    "peso" : {
+      "type": "string"
+    },
+    "altura" : {
+      "type": "string"
     }
+
   },
   "validations": [],
   "relations": {

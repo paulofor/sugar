@@ -52,6 +52,10 @@ import { UserApi } from './services/custom/User';
 import { ProjetoApi } from './services/custom/Projeto';
 import { ExperienciaApi } from './services/custom/Experiencia';
 import { ItemCustoApi } from './services/custom/ItemCusto';
+import { ContainerApi } from './services/custom/Container';
+import { PerguntaFormularioApi } from './services/custom/PerguntaFormulario';
+import { BabyApi } from './services/custom/Baby';
+import { RespostaFormularioApi } from './services/custom/RespostaFormulario';
 /**
 * @module SDKBrowserModule
 * @description
@@ -86,6 +90,10 @@ export class SDKBrowserModule {
         ProjetoApi,
         ExperienciaApi,
         ItemCustoApi,
+        ContainerApi,
+        PerguntaFormularioApi,
+        BabyApi,
+        RespostaFormularioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -16,6 +16,6 @@
     "name": "storage",
     "connector": "loopback-component-storage",
     "provider": "filesystem",
-    "root": "/home/digicom/apps_nodejs/validador-server/server/storage"
+    "root": "/home/ubuntu/apps_nodejs/sugar_25002/server/storage"
   }
 }

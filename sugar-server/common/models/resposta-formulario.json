@@ -8,6 +8,14 @@
   "properties": {
     "valorResposta": {
       "type": "number"
+    },
+    "babyId" : {
+      "type" : "number",
+      "id" : true
+    },
+    "perguntaFormularioId" : {
+      "type" : "number",
+      "id" : true
     }
   },
   "validations": [],

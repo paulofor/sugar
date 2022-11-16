@@ -44,6 +44,8 @@ import { ItemCustoListaComponent } from './item-custo-lista/item-custo-lista.com
 import { ItemCustoEditaComponent } from './item-custo-edita/item-custo-edita.component';
 import { ItemCustoDetalheComponent } from './item-custo-detalhe/item-custo-detalhe.component';
 import { ImagemItemCustoUploadComponent } from './imagem-item-custo-upload/imagem-item-custo-upload.component';
+import { PerguntaListaComponent } from './pergunta-lista/pergunta-lista.component';
+import { PerguntaEditaComponent } from './pergunta-edita/pergunta-edita.component';
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 
@@ -63,6 +65,8 @@ registerLocaleData(localePt, 'pt-BR');
     ItemCustoEditaComponent,
     ItemCustoDetalheComponent,
     ImagemItemCustoUploadComponent,
+    PerguntaListaComponent,
+    PerguntaEditaComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,7 +118,8 @@ registerLocaleData(localePt, 'pt-BR');
     ProjetoEditaComponent,
     ExperienciaEditaComponent,
     ItemCustoEditaComponent,
-    ImagemItemCustoUploadComponent
+    ImagemItemCustoUploadComponent,
+    PerguntaEditaComponent
   ],
   bootstrap: [AppComponent]
 })

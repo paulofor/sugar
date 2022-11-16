@@ -4,6 +4,10 @@ import { User } from '../../models/User';
 import { Projeto } from '../../models/Projeto';
 import { Experiencia } from '../../models/Experiencia';
 import { ItemCusto } from '../../models/ItemCusto';
+import { Container } from '../../models/Container';
+import { PerguntaFormulario } from '../../models/PerguntaFormulario';
+import { Baby } from '../../models/Baby';
+import { RespostaFormulario } from '../../models/RespostaFormulario';
 
 export interface Models { [name: string]: any }
 
@@ -15,6 +19,10 @@ export class SDKModels {
     Projeto: Projeto,
     Experiencia: Experiencia,
     ItemCusto: ItemCusto,
+    Container: Container,
+    PerguntaFormulario: PerguntaFormulario,
+    Baby: Baby,
+    RespostaFormulario: RespostaFormulario,
     
   };
 
