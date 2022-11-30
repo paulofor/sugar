@@ -29,5 +29,51 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "RecebeFormulario": {
+      "accepts": [
+        {
+          "arg": "dataReferencia",
+          "type": "number",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/recebeFormulario",
+          "verb": "post"
+        }
+      ]
+    },
+    "ListaAtivoBaby": {
+      "accepts": [
+        
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/listaAtivoBaby",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }
