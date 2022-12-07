@@ -4,11 +4,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import br.com.digicom.sugar.dao.DatasetSugar;
+import br.com.digicom.sugar.dao.PerguntaFormulario_ListaAtivoPergunta;
+
 public class CargaRespostaObj {
 
 	public void executa() {
 		System.out.println("CargaRespostaObj executando..");
-		leArquivo();
+		//leArquivo();
+		DatasetSugar ds = new DatasetSugar();
+		PerguntaFormulario_ListaAtivoPergunta exec = new PerguntaFormulario_ListaAtivoPergunta();
+		exec.setComum(ds);
+		exec.executa();
+		
 	}
 	
 	private void leArquivo() {
@@ -19,7 +27,6 @@ public class CargaRespostaObj {
 			BufferedReader csvReader = new BufferedReader(new FileReader(nomeArquivo));
 			while ((row = csvReader.readLine()) != null) {
 				String[] data = row.split(",");
-				// do something with the data
 				System.out.println(data.length);
 			}
 			csvReader.close();
