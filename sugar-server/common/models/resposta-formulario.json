@@ -9,8 +9,8 @@
     "valorResposta": {
       "type": "number"
     },
-    "babyId" : {
-      "type" : "number",
+    "emailBaby" : {
+      "type" : "string",
       "id" : true
     },
     "perguntaFormularioId" : {

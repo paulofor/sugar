@@ -6,6 +6,7 @@ import com.strongloop.android.loopback.callbacks.ListCallback;
 
 import br.com.digicom.sugar.daobase.DaoBase;
 import br.com.digicom.sugar.modelo.PerguntaFormulario;
+import br.com.digicom.sugar.processamento.LeArquivoForm;
 
 public class PerguntaFormulario_ListaAtivoPergunta extends DaoBaseSugar {
 
@@ -29,7 +30,7 @@ public class PerguntaFormulario_ListaAtivoPergunta extends DaoBaseSugar {
 
 	@Override
 	protected DaoBase getProximo() {
-		return null;
+		return new LeArquivoForm();
 	}
 
 
