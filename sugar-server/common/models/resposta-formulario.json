@@ -27,5 +27,31 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "RecebeResposta": {
+      "accepts": [
+        {
+          "arg": "listaBabyResposta",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/recebeResposta",
+          "verb": "post"
+        }
+      ]
+    }
+  }
 }

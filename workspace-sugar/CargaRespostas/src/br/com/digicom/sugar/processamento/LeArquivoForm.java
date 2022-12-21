@@ -4,18 +4,22 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import br.com.digicom.sugar.dao.DaoBaseSugar;
 import br.com.digicom.sugar.dao.DatasetSugar;
 import br.com.digicom.sugar.daobase.DaoBase;
 import br.com.digicom.sugar.modelo.PerguntaFormulario;
+import br.com.digicom.sugar.modelo.RespostaFormulario;
 
 public class LeArquivoForm extends DaoBaseSugar{
 
 	private String[] cabecalho;
 	private List<String[]> respostas;
 	private Integer[] idPergunta;
+	
+	private List<List<RespostaFormulario>> respostaBaby;
  	
 	@Override
 	protected void executaImpl() {
@@ -24,6 +28,24 @@ public class LeArquivoForm extends DaoBaseSugar{
 		this.leArquivo();
 		this.montaIdPergunta();
 		System.out.println("Montou dados");
+		this.montaListaResposta();
+		ds.setListaResposta(this.respostaBaby);
+		executaProximo();
+	}
+	
+	private void montaListaResposta() {
+		this.respostaBaby = new LinkedList<List<RespostaFormulario>>();
+		for (int i=0; i<respostas.size();i++) {
+			String[] linhaResposta = respostas.get(i);
+			List<RespostaFormulario> respostas = new ArrayList<RespostaFormulario>();
+			for (int j=0; j < linhaResposta.length;j++) {
+				RespostaFormulario nova = new RespostaFormulario();
+				nova.setPerguntaFormularioId(this.idPergunta[j]);
+				nova.setValorResposta(Integer.parseInt(linhaResposta[j]));
+				respostas.add(nova);
+			}
+			this.respostaBaby.add(respostas);
+		}
 	}
 	
 	private void montaIdPergunta() {
