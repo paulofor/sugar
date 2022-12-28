@@ -31,7 +31,7 @@
     "RecebeResposta": {
       "accepts": [
         {
-          "arg": "listaBabyResposta",
+          "arg": "listaResposta",
           "type": "array",
           "root": true,
           "description": ""

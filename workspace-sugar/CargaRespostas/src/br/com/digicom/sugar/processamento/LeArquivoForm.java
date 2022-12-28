@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.digicom.sugar.dao.DaoBaseSugar;
 import br.com.digicom.sugar.dao.DatasetSugar;
+import br.com.digicom.sugar.dao.RespostaFormulario_RecebeResposta;
 import br.com.digicom.sugar.daobase.DaoBase;
 import br.com.digicom.sugar.modelo.PerguntaFormulario;
 import br.com.digicom.sugar.modelo.RespostaFormulario;
@@ -19,7 +20,7 @@ public class LeArquivoForm extends DaoBaseSugar{
 	private List<String[]> respostas;
 	private Integer[] idPergunta;
 	
-	private List<List<RespostaFormulario>> respostaBaby;
+	private List<BabyArquivo> respostaBaby;
  	
 	@Override
 	protected void executaImpl() {
@@ -34,15 +35,18 @@ public class LeArquivoForm extends DaoBaseSugar{
 	}
 	
 	private void montaListaResposta() {
-		this.respostaBaby = new LinkedList<List<RespostaFormulario>>();
+		this.respostaBaby = new LinkedList<BabyArquivo>();
 		for (int i=0; i<respostas.size();i++) {
+			BabyArquivo baby = new BabyArquivo();
 			String[] linhaResposta = respostas.get(i);
 			List<RespostaFormulario> respostas = new ArrayList<RespostaFormulario>();
 			for (int j=0; j < linhaResposta.length;j++) {
-				RespostaFormulario nova = new RespostaFormulario();
-				nova.setPerguntaFormularioId(this.idPergunta[j]);
-				nova.setValorResposta(Integer.parseInt(linhaResposta[j]));
-				respostas.add(nova);
+				if (this.idPergunta[j]!=null) {
+					RespostaFormulario nova = new RespostaFormulario();
+					nova.setPerguntaFormularioId(this.idPergunta[j]);
+					nova.setValorResposta(Integer.parseInt(linhaResposta[j].substring(1,2)));
+					respostas.add(nova);
+				}
 			}
 			this.respostaBaby.add(respostas);
 		}
@@ -92,8 +96,7 @@ public class LeArquivoForm extends DaoBaseSugar{
 
 	@Override
 	protected DaoBase getProximo() {
-		// TODO Auto-generated method stub
-		return null;
+		return new RespostaFormulario_RecebeResposta();
 	}
 
 }

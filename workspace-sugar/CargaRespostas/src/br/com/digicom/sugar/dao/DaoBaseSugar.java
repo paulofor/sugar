@@ -6,11 +6,13 @@ import br.com.digicom.sugar.daobase.DaoBase;
 import br.com.digicom.sugar.daobase.IDatasetComum;
 import br.com.digicom.sugar.daobase.comum.DaoBaseComum;
 import br.com.digicom.sugar.repositorio.RepositorioPerguntaFormulario;
+import br.com.digicom.sugar.repositorio.RepositorioRespostaFormulario;
 
 public abstract class DaoBaseSugar extends DaoBase{
 	
 	private RestAdapter adapter = new RestAdapter(DaoBaseComum.urlLoopback); 
 	protected RepositorioPerguntaFormulario repPergunta = adapter.createRepository(RepositorioPerguntaFormulario.class);
+	protected RepositorioRespostaFormulario repResposta = adapter.createRepository(RepositorioRespostaFormulario.class);
 
 	@Override
 	protected long getTempo() {

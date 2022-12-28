@@ -1,13 +1,11 @@
 package br.com.digicom.sugar.daobase;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadInfo;
 import java.util.List;
 
 public abstract class DaoBase {
 
 
-
+	protected DummyDaoBase dummy;
 	
 	private IDatasetComum comum = null;
 	private int contadorObj = 0;

@@ -31,8 +31,9 @@ public class RepositorioRespostaFormulario extends ModelRepository<RespostaFormu
         for (List<RespostaFormulario> listaObj : listaResposta) {
         	JSONArray lista2 = new JSONArray();
         	for (RespostaFormulario resposta : listaObj) {
-        		lista.put(resposta.getJSON());
+        		lista2.put(resposta.getJSON());
         	}
+        	lista.put(lista2);
         }
         params.put("listaResposta", lista);
         invokeStaticMethod("recebeResposta", params,   new EmptyResponseParser(callback));
