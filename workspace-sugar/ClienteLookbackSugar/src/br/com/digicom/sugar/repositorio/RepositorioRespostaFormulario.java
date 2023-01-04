@@ -12,6 +12,7 @@ import com.strongloop.android.loopback.callbacks.VoidCallback;
 import com.strongloop.android.remoting.adapters.RestContractItem;
 
 import br.com.digicom.sugar.modelo.RespostaFormulario;
+import br.com.digicom.sugar.modelo.extra.BabyArquivo;
 
 public class RepositorioRespostaFormulario extends ModelRepository<RespostaFormulario>{
 
@@ -23,17 +24,13 @@ public class RepositorioRespostaFormulario extends ModelRepository<RespostaFormu
 		return "RespostaFormularios";
 	}
 	
-	public void recebeResposta(final List<List<RespostaFormulario>> listaResposta, final VoidCallback callback ) {
+	public void recebeResposta(final List<BabyArquivo> listaResposta, final VoidCallback callback ) {
 		RestContractItem contrato = new RestContractItem("RespostaFormularios/recebeResposta","POST");
 		this.getRestAdapter().getContract().addItem(contrato, "RespostaFormulario.recebeResposta");
         Map<String, Object> params = new HashMap<String, Object>();
         JSONArray lista = new JSONArray();
-        for (List<RespostaFormulario> listaObj : listaResposta) {
-        	JSONArray lista2 = new JSONArray();
-        	for (RespostaFormulario resposta : listaObj) {
-        		lista2.put(resposta.getJSON());
-        	}
-        	lista.put(lista2);
+        for (BabyArquivo baby : listaResposta) {
+        	lista.put(baby.getJSON());
         }
         params.put("listaResposta", lista);
         invokeStaticMethod("recebeResposta", params,   new EmptyResponseParser(callback));

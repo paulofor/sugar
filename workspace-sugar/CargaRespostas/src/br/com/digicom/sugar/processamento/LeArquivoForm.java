@@ -13,6 +13,7 @@ import br.com.digicom.sugar.dao.RespostaFormulario_RecebeResposta;
 import br.com.digicom.sugar.daobase.DaoBase;
 import br.com.digicom.sugar.modelo.PerguntaFormulario;
 import br.com.digicom.sugar.modelo.RespostaFormulario;
+import br.com.digicom.sugar.modelo.extra.BabyArquivo;
 
 public class LeArquivoForm extends DaoBaseSugar{
 
@@ -44,11 +45,30 @@ public class LeArquivoForm extends DaoBaseSugar{
 				if (this.idPergunta[j]!=null) {
 					RespostaFormulario nova = new RespostaFormulario();
 					nova.setPerguntaFormularioId(this.idPergunta[j]);
-					nova.setValorResposta(Integer.parseInt(linhaResposta[j].substring(1,2)));
+					System.out.println(linhaResposta[j]);
+					nova.setValorResposta(getValor(linhaResposta[j]));
 					respostas.add(nova);
 				}
 			}
-			this.respostaBaby.add(respostas);
+			baby.setRespostas(respostas);
+			baby.setEmail(getTexto(linhaResposta[1]));
+			baby.setNome(getTexto(linhaResposta[2]));
+			this.respostaBaby.add(baby);
+		}
+	}
+	
+	private int getValor(String dado) {
+		if (dado.length()==2) {
+			return 0;
+		} else {
+			return Integer.parseInt(dado.substring(1,2));
+		}
+	}
+	private String getTexto(String dado) {
+		if (dado.length()==2) {
+			return "";
+		} else {
+			return dado.substring(1,dado.length()-1);
 		}
 	}
 	
@@ -71,7 +91,7 @@ public class LeArquivoForm extends DaoBaseSugar{
 				return pergunta.getId();
 			}
 		}
-		System.out.println(texto);
+		//System.out.println(texto);
 		return null;
 	}
 
