@@ -8,17 +8,9 @@ public class Baby extends Model {
 	private String nomeApelido;
 	private String altura;
 	private String peso;
-	private Integer id;
+
 	
 	
-	
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getEmail() {
 		return email;
 	}

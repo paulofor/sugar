@@ -10,7 +10,6 @@ public class RespostaFormulario extends Model{
 
 	private int valorResposta;
 	private int perguntaFormularioId;
-	private int babyId;
 	
 	
 	public JSONObject getJSON() {
@@ -18,7 +17,6 @@ public class RespostaFormulario extends Model{
 		try {
 			obj.put("valorResposta", valorResposta);
 			obj.put("perguntaFormularioId", perguntaFormularioId);
-			obj.put("babyId", babyId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -37,12 +35,7 @@ public class RespostaFormulario extends Model{
 	public void setPerguntaFormularioId(int perguntaFormularioId) {
 		this.perguntaFormularioId = perguntaFormularioId;
 	}
-	public int getBabyId() {
-		return babyId;
-	}
-	public void setBabyId(int babyId) {
-		this.babyId = babyId;
-	}
+	
 
 	
 	

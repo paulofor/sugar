@@ -18,9 +18,12 @@ module.exports = function(Respostaformulario) {
                         console.log('result baby' , result);
                         for (let j=0; j<respostaBaby.respostas.length;j++) {
                             let detalheResposta = respostaBaby.respostas[j];
-                            detalheResposta.babyId = result.id;
+                            detalheResposta.emailBaby = respostaBaby.email;
                             console.log(detalheResposta);
                             console.log();
+                            Respostaformulario.create(detalheResposta, (err,result) => {
+
+                            })
                         }
                     })
                     
