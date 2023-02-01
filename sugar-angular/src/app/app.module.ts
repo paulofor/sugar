@@ -46,6 +46,7 @@ import { ItemCustoDetalheComponent } from './item-custo-detalhe/item-custo-detal
 import { ImagemItemCustoUploadComponent } from './imagem-item-custo-upload/imagem-item-custo-upload.component';
 import { PerguntaListaComponent } from './pergunta-lista/pergunta-lista.component';
 import { PerguntaEditaComponent } from './pergunta-edita/pergunta-edita.component';
+import { KerasTipoListComponent } from './keras-tipo-list/keras-tipo-list.component';
 //import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 
@@ -67,6 +68,7 @@ registerLocaleData(localePt, 'pt-BR');
     ImagemItemCustoUploadComponent,
     PerguntaListaComponent,
     PerguntaEditaComponent,
+    KerasTipoListComponent,
   ],
   imports: [
     BrowserModule,

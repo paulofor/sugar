@@ -56,6 +56,7 @@ import { ContainerApi } from './services/custom/Container';
 import { PerguntaFormularioApi } from './services/custom/PerguntaFormulario';
 import { BabyApi } from './services/custom/Baby';
 import { RespostaFormularioApi } from './services/custom/RespostaFormulario';
+import { TracoPersonalidadeApi } from './services/custom/TracoPersonalidade';
 /**
 * @module SDKBrowserModule
 * @description
@@ -94,6 +95,7 @@ export class SDKBrowserModule {
         PerguntaFormularioApi,
         BabyApi,
         RespostaFormularioApi,
+        TracoPersonalidadeApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

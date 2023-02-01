@@ -3,11 +3,14 @@
       <span>Perguntas</span>
       <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="edita()">novo</button>
   </div>
-  <div *ngIf="listaBase">
+  <div *ngIf="listaBase" class="dgc-painel-principal">
       <div class="dgc-card" *ngFor="let item of listaBase">
+
           <div class="dgc-card-header">
             <span>{{item.texto}}</span>
-
+          </div>
+          <div class="dgc-card-header">
+            <span>{{item.textoIngles}}</span>
           </div>
          
           <div class="dgc-card-comandos">

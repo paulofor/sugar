@@ -1,0 +1,32 @@
+{
+  "name": "TracoPersonalidade",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string"
+    },
+    "nomeIngles": {
+      "type": "string"
+    },
+    "escala": {
+      "type": "string"
+    },
+    "codigo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "perguntaFormularios": {
+      "type": "hasMany",
+      "model": "PerguntaFormulario",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

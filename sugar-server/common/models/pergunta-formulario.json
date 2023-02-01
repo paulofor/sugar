@@ -8,16 +8,26 @@
   "properties": {
     "texto": {
       "type": "string"
+    },
+    "textoIngles": {
+      "type": "string"
+    },
+    "pesoTraco" :{
+      "type" : "number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "tracoPersonalidade": {
+      "type": "belongsTo",
+      "model": "TracoPersonalidade",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {
     "ListaAtivoPergunta": {
-      "accepts": [
-        
-      ],
+      "accepts": [],
       "returns": [
         {
           "arg": "resultado",

@@ -7,7 +7,14 @@
     <mat-form-field class="example-full-width">
       <input matInput maxlength="200" #texto [(ngModel)]="item.texto" name="texto" placeholder="Pergunta" />
     </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="200" #textoIngles [(ngModel)]="item.textoIngles" name="textoIngles" placeholder="Inglês" />
+    </mat-form-field>
    
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #pesoTraco [(ngModel)]="item.pesoTraco" name="pesoTraco" placeholder="Peso" />
+    </mat-form-field>
 
   </mat-dialog-content>
 

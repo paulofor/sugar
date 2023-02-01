@@ -9,13 +9,13 @@
     "valorResposta": {
       "type": "number"
     },
-    "emailBaby" : {
-      "type" : "string",
-      "id" : true
+    "emailBaby": {
+      "type": "string",
+      "id": true
     },
-    "perguntaFormularioId" : {
-      "type" : "number",
-      "id" : true
+    "perguntaFormularioId": {
+      "type": "number",
+      "id": true
     }
   },
   "validations": [],

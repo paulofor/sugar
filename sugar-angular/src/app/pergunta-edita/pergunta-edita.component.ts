@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { BaseEditComponent } from '../base-component/base-edit-component';
-import { PerguntaFormulario, PerguntaFormularioApi } from '../shared/sdk';
+import { PerguntaFormulario, PerguntaFormularioApi, TracoPersonalidade, TracoPersonalidadeApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-pergunta-edita',
@@ -10,8 +10,10 @@ import { PerguntaFormulario, PerguntaFormularioApi } from '../shared/sdk';
 })
 export class PerguntaEditaComponent extends BaseEditComponent {
 
+  listaTraco:TracoPersonalidade[];
+
   constructor(protected dialogRef: MatDialogRef<any>
-    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: PerguntaFormularioApi,
+    , @Inject(MAT_DIALOG_DATA) protected data: any, protected servico: PerguntaFormularioApi, private srvTraco:TracoPersonalidadeApi
   ) {
     super(dialogRef,data,servico);
   }
@@ -21,6 +23,11 @@ export class PerguntaEditaComponent extends BaseEditComponent {
     return novo;
   }
 
- 
+  montaCombos(): void {
+      this.srvTraco.find()
+        .subscribe((result:TracoPersonalidade[]) => {
+          this.listaTraco = result;
+        })
+  }
 
 }

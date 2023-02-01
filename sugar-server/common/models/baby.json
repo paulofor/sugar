@@ -8,18 +8,17 @@
   "properties": {
     "email": {
       "type": "string",
-      "id" : true
+      "id": true
     },
-    "nomeApelido" : {
+    "nomeApelido": {
       "type": "string"
     },
-    "peso" : {
+    "peso": {
       "type": "string"
     },
-    "altura" : {
+    "altura": {
       "type": "string"
     }
-
   },
   "validations": [],
   "relations": {
@@ -57,9 +56,7 @@
       ]
     },
     "ListaAtivoBaby": {
-      "accepts": [
-        
-      ],
+      "accepts": [],
       "returns": [
         {
           "arg": "resultado",

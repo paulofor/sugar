@@ -1,14 +1,25 @@
 /* tslint:disable */
+import {
+  TracoPersonalidade
+} from '../index';
 
 declare var Object: any;
 export interface PerguntaFormularioInterface {
   "texto"?: string;
+  "textoIngles"?: string;
+  "pesoTraco"?: number;
   "id"?: number;
+  "tracoPersonalidadeId"?: number;
+  tracoPersonalidade?: TracoPersonalidade;
 }
 
 export class PerguntaFormulario implements PerguntaFormularioInterface {
   "texto": string;
+  "textoIngles": string;
+  "pesoTraco": number;
   "id": number;
+  "tracoPersonalidadeId": number;
+  tracoPersonalidade: TracoPersonalidade;
   constructor(data?: PerguntaFormularioInterface) {
     Object.assign(this, data);
   }
@@ -46,12 +57,32 @@ export class PerguntaFormulario implements PerguntaFormularioInterface {
           name: 'texto',
           type: 'string'
         },
+        "textoIngles": {
+          name: 'textoIngles',
+          type: 'string'
+        },
+        "pesoTraco": {
+          name: 'pesoTraco',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
+        "tracoPersonalidadeId": {
+          name: 'tracoPersonalidadeId',
+          type: 'number'
+        },
       },
       relations: {
+        tracoPersonalidade: {
+          name: 'tracoPersonalidade',
+          type: 'TracoPersonalidade',
+          model: 'TracoPersonalidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'tracoPersonalidadeId',
+          keyTo: 'id'
+        },
       }
     }
   }

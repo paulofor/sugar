@@ -7,5 +7,6 @@ export * from './Container';
 export * from './PerguntaFormulario';
 export * from './Baby';
 export * from './RespostaFormulario';
+export * from './TracoPersonalidade';
 export * from './SDKModels';
 export * from './logger.service';

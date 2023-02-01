@@ -9,16 +9,16 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Baby } from '../../models/Baby';
+import { TracoPersonalidade } from '../../models/TracoPersonalidade';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { RespostaFormulario } from '../../models/RespostaFormulario';
+import { PerguntaFormulario } from '../../models/PerguntaFormulario';
 
 
 /**
- * Api services for the `Baby` model.
+ * Api services for the `TracoPersonalidade` model.
  */
 @Injectable()
-export class BabyApi extends BaseLoopBackApi {
+export class TracoPersonalidadeApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -31,11 +31,11 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Localize um item relacionado por ID para respostaFormularios.
+   * Localize um item relacionado por ID para perguntaFormularios.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
-   * @param {any} fk Chave estrangeira para respostaFormularios
+   * @param {any} fk Chave estrangeira para perguntaFormularios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -43,13 +43,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
-  public findByIdRespostaFormularios(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdPerguntaFormularios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios/:fk";
+    "/TracoPersonalidades/:id/perguntaFormularios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -61,11 +61,11 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Excluir um item relacionado por ID para respostaFormularios.
+   * Excluir um item relacionado por ID para perguntaFormularios.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
-   * @param {any} fk Chave estrangeira para respostaFormularios
+   * @param {any} fk Chave estrangeira para perguntaFormularios
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -73,10 +73,10 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdRespostaFormularios(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdPerguntaFormularios(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios/:fk";
+    "/TracoPersonalidades/:id/perguntaFormularios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -88,11 +88,11 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Atualizar um item relacionado por ID para respostaFormularios.
+   * Atualizar um item relacionado por ID para perguntaFormularios.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
-   * @param {any} fk Chave estrangeira para respostaFormularios
+   * @param {any} fk Chave estrangeira para perguntaFormularios
    *
    * @param {object} data Request data.
    *
@@ -104,13 +104,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
-  public updateByIdRespostaFormularios(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdPerguntaFormularios(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios/:fk";
+    "/TracoPersonalidades/:id/perguntaFormularios/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -124,9 +124,9 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * respostaFormularios consultas de Baby.
+   * perguntaFormularios consultas de TracoPersonalidade.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @param {object} filter 
    *
@@ -136,13 +136,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
-  public getRespostaFormularios(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getPerguntaFormularios(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios";
+    "/TracoPersonalidades/:id/perguntaFormularios";
     let _routeParams: any = {
       id: id
     };
@@ -154,9 +154,9 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Cria uma nova instância no respostaFormularios deste modelo.
+   * Cria uma nova instância no perguntaFormularios deste modelo.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @param {object} data Request data.
    *
@@ -168,13 +168,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
-  public createRespostaFormularios(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createPerguntaFormularios(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios";
+    "/TracoPersonalidades/:id/perguntaFormularios";
     let _routeParams: any = {
       id: id
     };
@@ -187,9 +187,9 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * Exclui todos os respostaFormularios deste modelo.
+   * Exclui todos os perguntaFormularios deste modelo.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -197,10 +197,10 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteRespostaFormularios(id: any, customHeaders?: Function): Observable<any> {
+  public deletePerguntaFormularios(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios";
+    "/TracoPersonalidades/:id/perguntaFormularios";
     let _routeParams: any = {
       id: id
     };
@@ -211,9 +211,9 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * respostaFormularios contagens de Baby.
+   * perguntaFormularios contagens de TracoPersonalidade.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -225,10 +225,10 @@ export class BabyApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countRespostaFormularios(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countPerguntaFormularios(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios/count";
+    "/TracoPersonalidades/:id/perguntaFormularios/count";
     let _routeParams: any = {
       id: id
     };
@@ -252,13 +252,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies";
+    "/TracoPersonalidades";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -271,7 +271,7 @@ export class BabyApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @param {object} data Request data.
    *
@@ -283,13 +283,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id";
+    "/TracoPersonalidades/:id";
     let _routeParams: any = {
       id: id
     };
@@ -302,64 +302,9 @@ export class BabyApi extends BaseLoopBackApi {
   }
 
   /**
-   * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
+   * Cria uma nova instância no perguntaFormularios deste modelo.
    *
-   * @param {object} data Request data.
-   *
-   *  - `dataReferencia` – `{number}` - 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
-   * </em>
-   */
-  public RecebeFormulario(dataReferencia: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/recebeFormulario";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof dataReferencia !== 'undefined' && dataReferencia !== null) _urlParams.dataReferencia = dataReferencia;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
-   * </em>
-   */
-  public ListaAtivoBaby(customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/listaAtivoBaby";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Cria uma nova instância no respostaFormularios deste modelo.
-   *
-   * @param {any} id Baby id
+   * @param {any} id TracoPersonalidade id
    *
    * @param {object} data Request data.
    *
@@ -371,13 +316,13 @@ export class BabyApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Baby` object.)
+   * This usually means the response is a `TracoPersonalidade` object.)
    * </em>
    */
-  public createManyRespostaFormularios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyPerguntaFormularios(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Babies/:id/respostaFormularios";
+    "/TracoPersonalidades/:id/perguntaFormularios";
     let _routeParams: any = {
       id: id
     };
@@ -391,9 +336,9 @@ export class BabyApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Baby`.
+   * i.e. `TracoPersonalidade`.
    */
   public getModelName() {
-    return "Baby";
+    return "TracoPersonalidade";
   }
 }

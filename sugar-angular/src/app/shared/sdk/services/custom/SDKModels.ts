@@ -8,6 +8,7 @@ import { Container } from '../../models/Container';
 import { PerguntaFormulario } from '../../models/PerguntaFormulario';
 import { Baby } from '../../models/Baby';
 import { RespostaFormulario } from '../../models/RespostaFormulario';
+import { TracoPersonalidade } from '../../models/TracoPersonalidade';
 
 export interface Models { [name: string]: any }
 
@@ -23,6 +24,7 @@ export class SDKModels {
     PerguntaFormulario: PerguntaFormulario,
     Baby: Baby,
     RespostaFormulario: RespostaFormulario,
+    TracoPersonalidade: TracoPersonalidade,
     
   };
 

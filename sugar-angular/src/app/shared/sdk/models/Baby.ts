@@ -9,7 +9,6 @@ export interface BabyInterface {
   "nomeApelido"?: string;
   "peso"?: string;
   "altura"?: string;
-  "id"?: number;
   respostaFormularios?: RespostaFormulario[];
 }
 
@@ -18,7 +17,6 @@ export class Baby implements BabyInterface {
   "nomeApelido": string;
   "peso": string;
   "altura": string;
-  "id": number;
   respostaFormularios: RespostaFormulario[];
   constructor(data?: BabyInterface) {
     Object.assign(this, data);
@@ -51,7 +49,7 @@ export class Baby implements BabyInterface {
       name: 'Baby',
       plural: 'Babies',
       path: 'Babies',
-      idName: 'id',
+      idName: 'email',
       properties: {
         "email": {
           name: 'email',
@@ -69,10 +67,6 @@ export class Baby implements BabyInterface {
           name: 'altura',
           type: 'string'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
       },
       relations: {
         respostaFormularios: {
@@ -80,7 +74,7 @@ export class Baby implements BabyInterface {
           type: 'RespostaFormulario[]',
           model: 'RespostaFormulario',
           relationType: 'hasMany',
-                  keyFrom: 'id',
+                  keyFrom: 'email',
           keyTo: 'babyId'
         },
       }

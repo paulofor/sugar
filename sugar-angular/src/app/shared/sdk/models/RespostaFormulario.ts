@@ -6,15 +6,17 @@ import {
 declare var Object: any;
 export interface RespostaFormularioInterface {
   "valorResposta"?: number;
-  "babyId"?: number;
+  "emailBaby"?: string;
   "perguntaFormularioId"?: number;
+  "babyId"?: string;
   perguntaFormulario?: PerguntaFormulario;
 }
 
 export class RespostaFormulario implements RespostaFormularioInterface {
   "valorResposta": number;
-  "babyId": number;
+  "emailBaby": string;
   "perguntaFormularioId": number;
+  "babyId": string;
   perguntaFormulario: PerguntaFormulario;
   constructor(data?: RespostaFormularioInterface) {
     Object.assign(this, data);
@@ -47,19 +49,23 @@ export class RespostaFormulario implements RespostaFormularioInterface {
       name: 'RespostaFormulario',
       plural: 'RespostaFormularios',
       path: 'RespostaFormularios',
-      idName: 'babyId',
+      idName: 'emailBaby',
       properties: {
         "valorResposta": {
           name: 'valorResposta',
           type: 'number'
         },
-        "babyId": {
-          name: 'babyId',
-          type: 'number'
+        "emailBaby": {
+          name: 'emailBaby',
+          type: 'string'
         },
         "perguntaFormularioId": {
           name: 'perguntaFormularioId',
           type: 'number'
+        },
+        "babyId": {
+          name: 'babyId',
+          type: 'string'
         },
       },
       relations: {
