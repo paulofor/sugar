@@ -1,0 +1,23 @@
+<div class="dgc-painel">
+  <div class="dgc-painel-header" *ngIf="principal">
+      <span>{{principal.email}}</span>
+  </div>
+  <div *ngIf="listaBase" class="dgc-painel-principal">
+
+      <div class="dgc-card" *ngFor="let item of listaBase">
+
+        <div class="dgc-card-detalhe">
+          <div>{{item.perguntaFormulario.texto}}</div>
+          <div>Resposta: {{item.valorResposta}}</div>
+        </div>
+
+        <div class="dgc-card-detalhe">
+          <div>Traço: {{item.perguntaFormulario.tracoPersonalidade.nome}}</div>
+          <div>Peso: {{item.perguntaFormulario.pesoTraco}}</div>
+        </div>
+        <div class="dgc-card-detalhe">
+          <div>Pontos: {{ (item.perguntaFormulario.pesoTraco * item.valorResposta) }}</div>
+        </div>
+      </div>
+  </div>
+</div>

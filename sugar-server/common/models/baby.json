@@ -25,11 +25,41 @@
     "respostaFormularios": {
       "type": "hasMany",
       "model": "RespostaFormulario",
-      "foreignKey": ""
+      "foreignKey": "emailBaby"
+    },
+    "tracoBabies": {
+      "type": "hasMany",
+      "model": "TracoBaby",
+      "foreignKey": "emailBaby"
     }
   },
   "acls": [],
   "methods": {
+    "CalculaTraco": {
+      "accepts": [
+        {
+          "arg": "email",
+          "type": "string",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "resultado",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/calculaTraco",
+          "verb": "post"
+        }
+      ]
+    },
     "RecebeFormulario": {
       "accepts": [
         {

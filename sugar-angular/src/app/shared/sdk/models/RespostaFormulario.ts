@@ -8,7 +8,6 @@ export interface RespostaFormularioInterface {
   "valorResposta"?: number;
   "emailBaby"?: string;
   "perguntaFormularioId"?: number;
-  "babyId"?: string;
   perguntaFormulario?: PerguntaFormulario;
 }
 
@@ -16,7 +15,6 @@ export class RespostaFormulario implements RespostaFormularioInterface {
   "valorResposta": number;
   "emailBaby": string;
   "perguntaFormularioId": number;
-  "babyId": string;
   perguntaFormulario: PerguntaFormulario;
   constructor(data?: RespostaFormularioInterface) {
     Object.assign(this, data);
@@ -62,10 +60,6 @@ export class RespostaFormulario implements RespostaFormularioInterface {
         "perguntaFormularioId": {
           name: 'perguntaFormularioId',
           type: 'number'
-        },
-        "babyId": {
-          name: 'babyId',
-          type: 'string'
         },
       },
       relations: {

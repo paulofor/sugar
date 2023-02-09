@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { BabyListComponent } from '../baby-list/baby-list.component';
 import { ExperienciaListaComponent } from '../experiencia-lista/experiencia-lista.component';
 
 
@@ -7,6 +8,7 @@ import { ItemCustoDetalheComponent } from '../item-custo-detalhe/item-custo-deta
 import { PerguntaListaComponent } from '../pergunta-lista/pergunta-lista.component';
 import { ProjetoDetalheComponent } from '../projeto-detalhe/projeto-detalhe.component';
 import { ProjetoListaComponent } from '../projeto-lista/projeto-lista.component';
+import { RespostaBabyComponent } from '../resposta-baby/resposta-baby.component';
 
 
 export const routes : Routes = [
@@ -19,6 +21,9 @@ export const routes : Routes = [
     { path: 'itemCustoDetalhe/:id' , component: ItemCustoDetalheComponent },
     { path: 'perguntaLista' , component: PerguntaListaComponent },
  
+    { path: 'babyLista' , component: BabyListComponent },
+    { path: 'respostaBaby/:id' , component: RespostaBabyComponent },
+
     { path: '',  component: HomeComponent  }
     //{ path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

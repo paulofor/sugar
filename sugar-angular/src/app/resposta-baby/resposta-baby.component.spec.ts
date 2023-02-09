@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KerasTipoListComponent } from './keras-tipo-list.component';
+import { RespostaBabyComponent } from './resposta-baby.component';
 
-describe('KerasTipoListComponent', () => {
-  let component: KerasTipoListComponent;
-  let fixture: ComponentFixture<KerasTipoListComponent>;
+describe('RespostaBabyComponent', () => {
+  let component: RespostaBabyComponent;
+  let fixture: ComponentFixture<RespostaBabyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KerasTipoListComponent ]
+      declarations: [ RespostaBabyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KerasTipoListComponent);
+    fixture = TestBed.createComponent(RespostaBabyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

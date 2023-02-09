@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  RespostaFormulario
+  RespostaFormulario,
+  TracoBaby
 } from '../index';
 
 declare var Object: any;
@@ -10,6 +11,7 @@ export interface BabyInterface {
   "peso"?: string;
   "altura"?: string;
   respostaFormularios?: RespostaFormulario[];
+  tracoBabies?: TracoBaby[];
 }
 
 export class Baby implements BabyInterface {
@@ -18,6 +20,7 @@ export class Baby implements BabyInterface {
   "peso": string;
   "altura": string;
   respostaFormularios: RespostaFormulario[];
+  tracoBabies: TracoBaby[];
   constructor(data?: BabyInterface) {
     Object.assign(this, data);
   }
@@ -75,7 +78,15 @@ export class Baby implements BabyInterface {
           model: 'RespostaFormulario',
           relationType: 'hasMany',
                   keyFrom: 'email',
-          keyTo: 'babyId'
+          keyTo: 'emailBaby'
+        },
+        tracoBabies: {
+          name: 'tracoBabies',
+          type: 'TracoBaby[]',
+          model: 'TracoBaby',
+          relationType: 'hasMany',
+                  keyFrom: 'email',
+          keyTo: 'emailBaby'
         },
       }
     }

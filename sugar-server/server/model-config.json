@@ -74,5 +74,9 @@
   "TracoPersonalidade": {
     "dataSource": "mysqlDS",
     "public": true
+  },
+  "TracoBaby": {
+    "dataSource": "mysqlDS",
+    "public": true
   }
 }

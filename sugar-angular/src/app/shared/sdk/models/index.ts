@@ -8,5 +8,6 @@ export * from './PerguntaFormulario';
 export * from './Baby';
 export * from './RespostaFormulario';
 export * from './TracoPersonalidade';
+export * from './TracoBaby';
 export * from './BaseModels';
 export * from './FireLoopRef';

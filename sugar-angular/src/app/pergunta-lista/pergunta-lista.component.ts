@@ -24,7 +24,9 @@ export class PerguntaListaComponent extends BaseListComponent {
   }
 
  
-
+  getFiltro() {
+    return {'include' : 'tracoPersonalidade' }
+  }
   
 
 
