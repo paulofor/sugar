@@ -18,6 +18,12 @@
     },
     "altura": {
       "type": "string"
+    },
+    "quadril" : {
+      "type" : "string"
+    },
+    "dataNascimento" : {
+      "type" : "string"
     }
   },
   "validations": [],

@@ -10,6 +10,8 @@ export interface BabyInterface {
   "nomeApelido"?: string;
   "peso"?: string;
   "altura"?: string;
+  "quadril"?: string;
+  "dataNascimento"?: string;
   respostaFormularios?: RespostaFormulario[];
   tracoBabies?: TracoBaby[];
 }
@@ -19,6 +21,8 @@ export class Baby implements BabyInterface {
   "nomeApelido": string;
   "peso": string;
   "altura": string;
+  "quadril": string;
+  "dataNascimento": string;
   respostaFormularios: RespostaFormulario[];
   tracoBabies: TracoBaby[];
   constructor(data?: BabyInterface) {
@@ -68,6 +72,14 @@ export class Baby implements BabyInterface {
         },
         "altura": {
           name: 'altura',
+          type: 'string'
+        },
+        "quadril": {
+          name: 'quadril',
+          type: 'string'
+        },
+        "dataNascimento": {
+          name: 'dataNascimento',
           type: 'string'
         },
       },

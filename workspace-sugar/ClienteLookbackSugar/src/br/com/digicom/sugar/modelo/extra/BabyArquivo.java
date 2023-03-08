@@ -12,8 +12,37 @@ public class BabyArquivo {
 	private String email;
 	private String nome;
 	private List<RespostaFormulario> respostas;
+	private String altura;
+	private String peso;
+	private String quadril;
+	private String dataNascimento;
 	
 	
+	
+	public String getAltura() {
+		return altura;
+	}
+	public void setAltura(String altura) {
+		this.altura = altura;
+	}
+	public String getPeso() {
+		return peso;
+	}
+	public void setPeso(String peso) {
+		this.peso = peso;
+	}
+	public String getQuadril() {
+		return quadril;
+	}
+	public void setQuadril(String quadril) {
+		this.quadril = quadril;
+	}
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -31,6 +60,10 @@ public class BabyArquivo {
 		try {
 			obj.put("email", email);
 			obj.put("nome", nome);
+			obj.put("altura", altura);
+			obj.put("peso", peso);
+			obj.put("quadril", quadril);
+			obj.put("dataNascimento", dataNascimento);
 			obj.put("respostas", this.getJSONResposta());
 		} catch (Exception e) {
 			e.printStackTrace();
