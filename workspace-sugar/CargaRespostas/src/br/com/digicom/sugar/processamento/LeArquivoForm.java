@@ -37,6 +37,7 @@ public class LeArquivoForm extends DaoBaseSugar{
 	
 	private void montaListaResposta() {
 		this.respostaBaby = new LinkedList<BabyArquivo>();
+		String[] item = respostas.get(2);
 		for (int i=0; i<respostas.size();i++) {
 			BabyArquivo baby = new BabyArquivo();
 			String[] linhaResposta = respostas.get(i);
