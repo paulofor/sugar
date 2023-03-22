@@ -37,7 +37,6 @@ public class LeArquivoForm extends DaoBaseSugar{
 	
 	private void montaListaResposta() {
 		this.respostaBaby = new LinkedList<BabyArquivo>();
-		String[] item = respostas.get(2);
 		for (int i=0; i<respostas.size();i++) {
 			BabyArquivo baby = new BabyArquivo();
 			String[] linhaResposta = respostas.get(i);
@@ -109,7 +108,8 @@ public class LeArquivoForm extends DaoBaseSugar{
 			row = csvReader.readLine();
 			this.cabecalho = row.replace("\"", "").split(",");
 			while ((row = csvReader.readLine()) != null) {
-				String[] data = row.split(",");
+				//String[] data = row.split(",");
+				String[] data = row.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 				this.respostas.add(data);
 				System.out.println(data.length);
 			}
