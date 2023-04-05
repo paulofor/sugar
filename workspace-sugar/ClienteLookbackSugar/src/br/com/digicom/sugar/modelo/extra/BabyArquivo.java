@@ -10,7 +10,7 @@ import br.com.digicom.sugar.modelo.RespostaFormulario;
 public class BabyArquivo {
 	
 	private String email;
-	private String nome;
+	private String nomeApelido;
 	private List<RespostaFormulario> respostas;
 	private String altura;
 	private String peso;
@@ -59,7 +59,7 @@ public class BabyArquivo {
 		JSONObject obj = new JSONObject();
 		try {
 			obj.put("email", email);
-			obj.put("nome", nome);
+			obj.put("nomeApelido", nomeApelido);
 			obj.put("altura", altura);
 			obj.put("peso", peso);
 			obj.put("quadril", quadril);
@@ -77,12 +77,13 @@ public class BabyArquivo {
 		}
 		return saida;
 	}
-	public String getNome() {
-		return nome;
+	public String getNomeApelido() {
+		return nomeApelido;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeApelido(String nomeApelido) {
+		this.nomeApelido = nomeApelido;
 	}
+	
 	
 
 }
