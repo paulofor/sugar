@@ -11,13 +11,12 @@
           <div>Resposta: {{item.valorResposta}}</div>
         </div>
 
-        <div class="dgc-card-detalhe">
+        <div class="dgc-card-detalhe" *ngIf="item.perguntaFormulario.tracoPersonalidade">
           <div>Traço: {{item.perguntaFormulario.tracoPersonalidade.nome}}</div>
           <div>Peso: {{item.perguntaFormulario.pesoTraco}}</div>
+          <div class="{{classeTraco(item.perguntaFormulario.tracoPersonalidade)}}">Pontos: {{ (item.perguntaFormulario.pesoTraco * item.valorResposta) }}</div>
         </div>
-        <div class="dgc-card-detalhe">
-          <div>Pontos: {{ (item.perguntaFormulario.pesoTraco * item.valorResposta) }}</div>
-        </div>
+
       </div>
   </div>
 </div>

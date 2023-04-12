@@ -14,7 +14,7 @@ export class RespostaBabyComponent extends BaseItemComListaComponent{
     super(srv,router);
   }
 
-  classeTrace(traco:TracoPersonalidade) {
+  classeTraco(traco:TracoPersonalidade) {
     if (traco.id==1) return 'traco-1';
     if (traco.id==2) return 'traco-2';
     if (traco.id==3) return 'traco-3';

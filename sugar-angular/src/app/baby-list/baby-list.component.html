@@ -5,10 +5,19 @@
   <div *ngIf="listaBase" class="dgc-painel-principal">
       <div class="dgc-card" *ngFor="let item of listaBase">
           <div class="dgc-card-header">
-            <a routerLink='/respostaBaby/{{item.email}}'>{{item.email}}</a>
+            <div class="dgc-link" routerLink="/respostaBaby/{{item.email}}">{{item.email}}</div>
+           
+          </div>
+          <div class="dgc-card-header">
             <div>{{item.nomeApelido}}</div>
           </div>
           
+          <div class="dgc-card-detalhe">
+            <div>Peso: {{item.peso}}</div>
+            <div>Altura: {{item.altura}}</div>
+            <div>Quadril: {{item.quadril}}</div>
+          </div>
+
           <div class="dgc-card-detalhe">
             <div *ngFor="let traco of item.tracoBabies">
               <span>{{traco.tracoPersonalidade.nome}}</span>
