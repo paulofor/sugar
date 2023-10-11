@@ -1,0 +1,43 @@
+{
+	"name": "TracoBaby",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"valorTotal": {
+			"type": "number"
+		},
+		"tracoPersonalidadeId": {
+			"type": "number"
+			,"id": true
+		},
+		"emailBaby": {
+			"type": "string"
+			,"id": true
+		},
+		"babyId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"baby": {
+			"type": "belongsTo",
+			"model": "Baby",
+			"foreignKey": ""
+		},
+		"tracoPersonalidade": {
+			"type": "belongsTo",
+			"model": "TracoPersonalidade",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

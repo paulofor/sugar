@@ -1,0 +1,51 @@
+{
+	"name": "ItemCusto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"valor": {
+			"type": "number"
+		},
+		"imagem1": {
+			"type": "string"
+		},
+		"imagem2": {
+			"type": "string"
+		},
+		"imagem3": {
+			"type": "string"
+		},
+		"imagem4": {
+			"type": "string"
+		},
+		"imagem5": {
+			"type": "string"
+		},
+		"imagem6": {
+			"type": "string"
+		},
+		"experienciaId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"experiencia": {
+			"type": "belongsTo",
+			"model": "Experiencia",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

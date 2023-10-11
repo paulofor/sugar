@@ -1,0 +1,25 @@
+<div class="container">
+
+
+  <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+
+      <div class="content">
+        
+
+        <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished($event)" buttonCaption="Escolha a imagem"
+          dropBoxMessage="ou arraste aqui"></image-upload>
+
+      </div>
+
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-button>Enviar</button>
+      <button mat-button mat-dialog-close>Cancelar</button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

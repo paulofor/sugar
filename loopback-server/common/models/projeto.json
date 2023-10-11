@@ -1,0 +1,27 @@
+{
+	"name": "Projeto",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"experiencias": {
+			"type": "hasMany",
+			"model": "Experiencia",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

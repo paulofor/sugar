@@ -1,0 +1,41 @@
+{
+	"name": "TracoPersonalidade",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"codigo": {
+			"type": "string"
+		},
+		"nomeIngles": {
+			"type": "string"
+		},
+		"escala": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"perguntaFormularios": {
+			"type": "hasMany",
+			"model": "PerguntaFormulario",
+			"foreignKey": ""
+		},
+		"tracoBabys": {
+			"type": "hasMany",
+			"model": "TracoBaby",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"name": "Experiencia",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"nome": {
+			"type": "string"
+		},
+		"valor": {
+			"type": "number"
+		},
+		"projetoId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"projeto": {
+			"type": "belongsTo",
+			"model": "Projeto",
+			"foreignKey": ""
+		},
+		"itemCustos": {
+			"type": "hasMany",
+			"model": "ItemCusto",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

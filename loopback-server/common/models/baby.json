@@ -1,0 +1,48 @@
+{
+	"name": "Baby",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"email": {
+			"type": "string"
+			,"id": true
+		},
+		"nomeApelido": {
+			"type": "string"
+		},
+		"peso": {
+			"type": "string"
+		},
+		"altura": {
+			"type": "string"
+		},
+		"quadril": {
+			"type": "string"
+		},
+		"dataNascimento": {
+			"type": "string"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"respostaFormularios": {
+			"type": "hasMany",
+			"model": "RespostaFormulario",
+			"foreignKey": ""
+		},
+		"tracoBabys": {
+			"type": "hasMany",
+			"model": "TracoBaby",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

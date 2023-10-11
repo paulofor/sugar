@@ -1,0 +1,43 @@
+{
+	"name": "RespostaFormulario",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"valorResposta": {
+			"type": "number"
+		},
+		"emailBaby": {
+			"type": "string"
+			,"id": true
+		},
+		"perguntaFormularioId": {
+			"type": "number"
+			,"id": true
+		},
+		"babyId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"perguntaFormulario": {
+			"type": "belongsTo",
+			"model": "PerguntaFormulario",
+			"foreignKey": ""
+		},
+		"baby": {
+			"type": "belongsTo",
+			"model": "Baby",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}

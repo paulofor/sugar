@@ -1,0 +1,21 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlDS": {
+    "host": "d555d.vps-kinghost.net",
+    "port": 3306,
+    "database": "sugar",
+    "password": "Sug@rBby69",
+    "name": "mysqlDS",
+    "user": "sugar",
+    "connector": "mysql"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "/home/ubuntu/apps_nodejs/sugar_25002/server/storage"
+  }
+}

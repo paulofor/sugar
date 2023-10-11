@@ -1,0 +1,41 @@
+{
+	"name": "PerguntaFormulario",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+  	"mixins": {
+    	"Counts": true
+  	},
+	"properties": {
+		"texto": {
+			"type": "string"
+		},
+		"textoIngles": {
+			"type": "string"
+		},
+		"pesoTraco": {
+			"type": "number"
+		},
+		"tracoPersonalidadeId": {
+			"type": "number"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"tracoPersonalidade": {
+			"type": "belongsTo",
+			"model": "TracoPersonalidade",
+			"foreignKey": ""
+		},
+		"respostaFormularios": {
+			"type": "hasMany",
+			"model": "RespostaFormulario",
+			"foreignKey": ""
+		}
+	},
+	"acls": [],
+	"methods": {
+	}
+}
