@@ -22,7 +22,7 @@
 		},
 		"babyId": {
 			"type": "number"
-		}
+		},
 	},
 	"validations": [],
 	"relations": {
