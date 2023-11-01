@@ -12,7 +12,7 @@ public class IngestaoRespostaPlanilhaObj extends DaoAplicacao {
 	@Override
 	protected void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		ImportaPlanilha exec = new ImportaPlanilhaImpl();
+		PerguntaFormulario_ListaAtiva exec = new PerguntaFormulario_ListaAtivaImpl();
 		exec.setComum(ds);
 		exec.executa();
 		executaFinalizacao(ds);

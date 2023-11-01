@@ -11,33 +11,38 @@ import java.util.List;
 import com.strongloop.android.loopback.callbacks.*;
 
 
-public abstract class ImportaPlanilha extends DaoAplicacao { 
+public abstract class PerguntaFormulario_ListaAtiva extends DaoAplicacao { 
 
-	private int NUM_PASSO = 2;
+	private int NUM_PASSO = 1;
 
 
-	// campos saida
-	protected List<Baby>  saidaListaResposta;
 
 	@Override
 	protected final void executaImpl() {
 		final DatasetAplicacao ds = (DatasetAplicacao) this.getComum();
-		if (executaCustom(ds.getListaPergunta())) {
-			ds.setListaResposta(saidaListaResposta);
-			executaProximo();
+		if (executaCustom()) {
+			repPerguntaFormulario.listaAtiva(  new ListCallback<PerguntaFormulario>() { 
+				public void onSuccess(List<PerguntaFormulario> lista) {
+						ds.setListaPergunta(lista);
+						executaProximo();
+				}
+				public void onError(Throwable t) {
+					onErrorBase(t);
+				}
+			});
 		} else {
-			finalizar();
+			executaProximo();
 		}
 	}
 
 
 	@Override
 	protected final DaoBase getProximo() {
-		return new DummyDaoBase();
+		return new ImportaPlanilhaImpl();
 	}
 
 
-	protected boolean executaCustom( List<PerguntaFormulario> listaPergunta ) { return true; }
+	protected boolean executaCustom() { return true; }
 
 	protected void preFinalizar() { return; }
 

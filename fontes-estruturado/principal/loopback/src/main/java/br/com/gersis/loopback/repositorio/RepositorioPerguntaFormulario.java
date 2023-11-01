@@ -30,6 +30,13 @@ public class RepositorioPerguntaFormulario extends ModelRepository<PerguntaFormu
 
 	// ***  Operações  ***
 
+	public synchronized void listaAtiva(final ListCallback<PerguntaFormulario> callback ) {
+		RestContractItem contrato = new RestContractItem("PerguntaFormularios/listaAtiva","GET");
+		this.getRestAdapter().getContract().addItem(contrato, "PerguntaFormulario.listaAtiva");
+		Map<String, Object> params = new HashMap<String, Object>();
+		invokeStaticMethod("listaAtiva", params,   new JsonArrayParser<PerguntaFormulario>(this, callback));
+	}
+
 
 	private JSONArray obtemLista(List<PerguntaFormulario> listaEntrada) {
 		JSONArray lista = new JSONArray();

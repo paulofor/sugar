@@ -17,7 +17,7 @@ public class IngestaoRespostaPlanilha {
 
 	public static void main(String[] args) {
 		System.out.print("IngestaoRespostaPlanilha");
-		System.out.println("(18/10/2023 10:43:59)");
+		System.out.println("(25/10/2023 12:24:02)");
 		try {
 			carregaProp();
 			IngestaoRespostaPlanilhaObj obj = new IngestaoRespostaPlanilhaObj();
@@ -53,6 +53,7 @@ public class IngestaoRespostaPlanilha {
 
 	private static void preparaComum() {
 		DaoBaseComum.setUrl(UrlLoopback);
-		DaoBaseComum.setProximo("IngestaoRespostaPlanilhaObj", new ImportaPlanilhaImpl());
+		DaoBaseComum.setProximo("IngestaoRespostaPlanilhaObj", new PerguntaFormulario_ListaAtivaImpl());
+		DaoBaseComum.setProximo("PerguntaFormulario_ListaAtiva", new ImportaPlanilhaImpl());
 	}
 }
