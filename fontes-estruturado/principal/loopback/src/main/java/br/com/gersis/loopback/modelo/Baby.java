@@ -86,8 +86,12 @@ public class Baby extends Model {
 		this.RespostaFormularios = new ArrayList<RespostaFormulario>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new RespostaFormulario();
-			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
-			this.RespostaFormularios.add((RespostaFormulario) objeto);
+			if (valores.get(i) instanceof RespostaFormulario) {
+				BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
+				this.RespostaFormularios.add((RespostaFormulario) objeto);
+			} else {
+				System.out.println("Outro tipo");
+			}
 		}
 	}
 	public List<TracoBaby> getTracoBabys() {

@@ -17,7 +17,7 @@ public class IngestaoRespostaPlanilha {
 
 	public static void main(String[] args) {
 		System.out.print("IngestaoRespostaPlanilha");
-		System.out.println("(25/10/2023 12:24:02)");
+		System.out.println("(01/11/2023 13:46:40)");
 		try {
 			carregaProp();
 			IngestaoRespostaPlanilhaObj obj = new IngestaoRespostaPlanilhaObj();
@@ -47,7 +47,7 @@ public class IngestaoRespostaPlanilha {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:25002/api";
+		UrlLoopback = "http://localhost:25002/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 

@@ -108,7 +108,7 @@ public class ImportaPlanilhaImpl extends ImportaPlanilha {
 	private void leArquivo() {
 		System.out.println("Dir:" + System.getProperty("user.dir"));
 		String row = null;
-		String nomeArquivo = "resposta/Sugar Personalidade.csv";
+		String nomeArquivo = "planilhas/Sugar Personalidade.csv";
 		try {
 			BufferedReader csvReader = new BufferedReader(new FileReader(nomeArquivo));
 			row = csvReader.readLine();
