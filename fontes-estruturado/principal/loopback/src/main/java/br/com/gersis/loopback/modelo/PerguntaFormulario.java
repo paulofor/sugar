@@ -22,6 +22,20 @@ public class PerguntaFormulario extends Model {
 	// Relacionamentos N
 	private List<RespostaFormulario> RespostaFormularios;
 
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
+
+	public int getIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long getIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -69,6 +83,7 @@ public class PerguntaFormulario extends Model {
 		this.RespostaFormularios = new ArrayList<RespostaFormulario>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new RespostaFormulario();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.RespostaFormularios.add((RespostaFormulario) objeto);
 		}

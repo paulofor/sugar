@@ -22,7 +22,7 @@
 		},
 		"babyId": {
 			"type": "number"
-		},
+		}
 	},
 	"validations": [],
 	"relations": {
@@ -39,5 +39,30 @@
 	},
 	"acls": [],
 	"methods": {
+		"RecebeResposta": {
+			"accepts": [
+				 {
+          			"arg": "listaResposta",
+          			"type": "array",
+          			"required": false,
+          			"description": ""
+        		}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/recebeResposta",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

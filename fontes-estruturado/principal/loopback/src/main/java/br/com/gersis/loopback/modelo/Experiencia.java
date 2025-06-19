@@ -21,6 +21,20 @@ public class Experiencia extends Model {
 	// Relacionamentos N
 	private List<ItemCusto> ItemCustos;
 
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
+
+	public int getIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long getIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -61,6 +75,7 @@ public class Experiencia extends Model {
 		this.ItemCustos = new ArrayList<ItemCusto>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new ItemCusto();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.ItemCustos.add((ItemCusto) objeto);
 		}

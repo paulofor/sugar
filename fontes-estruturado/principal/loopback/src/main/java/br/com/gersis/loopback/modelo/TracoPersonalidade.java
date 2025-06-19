@@ -23,6 +23,20 @@ public class TracoPersonalidade extends Model {
 	private List<PerguntaFormulario> PerguntaFormularios;
 	private List<TracoBaby> TracoBabys;
 
+	public void setId(Long id) {
+		this.setIdObjeto(id);
+	}
+	public void setId(Integer id) {
+		this.setIdObjeto(id);
+	}
+
+	public int getIdInteger() {
+		return new Integer(getId().toString());
+	}
+	public long getIdLong() {
+		return new Long(getId().toString());
+	}
+
 	public JSONObject getJSON() {
 		JSONObject obj = new JSONObject();
 		try {
@@ -70,6 +84,7 @@ public class TracoPersonalidade extends Model {
 		this.PerguntaFormularios = new ArrayList<PerguntaFormulario>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new PerguntaFormulario();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.PerguntaFormularios.add((PerguntaFormulario) objeto);
 		}
@@ -81,6 +96,7 @@ public class TracoPersonalidade extends Model {
 		this.TracoBabys = new ArrayList<TracoBaby>();
 		for (int i = 0; i < valores.size(); i++) {
 			Object objeto = new TracoBaby();
+			System.out.println(" --> ObjetoMap ");
 			BeanUtil.setProperties(objeto, (Map<String, ? extends Object>) valores.get(i), true);
 			this.TracoBabys.add((TracoBaby) objeto);
 		}

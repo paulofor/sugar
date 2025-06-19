@@ -1,7 +1,7 @@
 {
 	"name": "Baby",
 	"base": "PersistedModel",
-	"idInjection": true,
+
 	"options": {
 		"validateUpsert": true
 	},
@@ -27,6 +27,9 @@
 		},
 		"dataNascimento": {
 			"type": "string"
+		},
+		"rendaMensal": {
+			"type": "string"
 		}
 	},
 	"validations": [],
@@ -36,13 +39,38 @@
 			"model": "RespostaFormulario",
 			"foreignKey": ""
 		},
-		"tracoBabys": {
+		"tracoBabies": {
 			"type": "hasMany",
 			"model": "TracoBaby",
-			"foreignKey": ""
+			"foreignKey": "emailBaby"
 		}
 	},
 	"acls": [],
 	"methods": {
+		"CalculaTraco": {
+			"accepts": [
+				{
+          			"arg": "email",
+          			"type": "string",
+          			"required": false,
+          			"description": ""
+        		}
+			],
+			"returns": [
+ 				{
+     				"arg": "resultado",
+     				"type": "array",
+   					"root": true,
+    				"description": ""
+   				}
+			],
+			"description": "",
+			"http": [
+         		{
+          			"path": "/calculaTraco",
+   					"verb": "post"
+ 				}
+ 			]
+		}
 	}
 }

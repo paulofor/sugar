@@ -56,7 +56,9 @@ public class LeArquivoForm extends DaoBaseSugar{
 			baby.setAltura(getTexto(linhaResposta[3]));
 			baby.setPeso(getTexto(linhaResposta[4]));
 			baby.setQuadril(getTexto(linhaResposta[5]));
-			baby.setDataNascimento(getTexto(linhaResposta[6]));
+			baby.setRendaMensal(getTexto(linhaResposta[6]));
+			baby.setDataNascimento(getTexto(linhaResposta[7]));
+
 			this.respostaBaby.add(baby);
 		}
 	}

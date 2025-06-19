@@ -37,7 +37,7 @@
 	},
 	"acls": [],
 	"methods": {
-		"ListaAtiva": {
+		"ListaAtivoPergunta": {
 			"accepts": [
 			],
 			"returns": [
@@ -51,7 +51,7 @@
 			"description": "",
 			"http": [
          		{
-          			"path": "/listaAtiva",
+          			"path": "/listaAtivoPergunta",
    					"verb": "get"
  				}
  			]

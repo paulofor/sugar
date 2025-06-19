@@ -16,6 +16,7 @@ public class BabyArquivo {
 	private String peso;
 	private String quadril;
 	private String dataNascimento;
+	private String rendaMensal;
 	
 	
 	
@@ -64,6 +65,7 @@ public class BabyArquivo {
 			obj.put("peso", peso);
 			obj.put("quadril", quadril);
 			obj.put("dataNascimento", dataNascimento);
+			obj.put("rendaMensal", rendaMensal);
 			obj.put("respostas", this.getJSONResposta());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -82,6 +84,12 @@ public class BabyArquivo {
 	}
 	public void setNomeApelido(String nomeApelido) {
 		this.nomeApelido = nomeApelido;
+	}
+	public String getRendaMensal() {
+		return rendaMensal;
+	}
+	public void setRendaMensal(String rendaMensal) {
+		this.rendaMensal = rendaMensal;
 	}
 	
 	

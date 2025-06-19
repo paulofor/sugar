@@ -19,17 +19,14 @@
 		"emailBaby": {
 			"type": "string"
 			,"id": true
-		},
-		"babyId": {
-			"type": "number"
-		},
+		}
 	},
 	"validations": [],
 	"relations": {
 		"baby": {
 			"type": "belongsTo",
 			"model": "Baby",
-			"foreignKey": ""
+			"foreignKey": "emailBaby"
 		},
 		"tracoPersonalidade": {
 			"type": "belongsTo",

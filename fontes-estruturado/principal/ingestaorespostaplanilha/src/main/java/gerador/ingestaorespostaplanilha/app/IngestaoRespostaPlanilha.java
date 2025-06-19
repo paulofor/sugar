@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.Properties;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import gerador.ingestaorespostaplanilha.passo.*;
 import gerador.ingestaorespostaplanilha.passo.impl.*;
@@ -17,12 +19,15 @@ public class IngestaoRespostaPlanilha {
 
 	public static void main(String[] args) {
 		System.out.print("IngestaoRespostaPlanilha");
-		System.out.println("(01/11/2023 13:46:40)");
+		System.out.println("(19/06/2025 13:57:06)");
 		try {
 			carregaProp();
 			IngestaoRespostaPlanilhaObj obj = new IngestaoRespostaPlanilhaObj();
 			obj.executa();
-			System.out.println("finalizou");
+			LocalDateTime dataHoraAtual = LocalDateTime.now();
+			DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+			String dataHoraFormatada = dataHoraAtual.format(formatador);
+			System.out.println("finalizou " + dataHoraFormatada);
 			System.exit(0);
 		} catch (Exception e) {
 			gravarErro(e);
@@ -47,7 +52,7 @@ public class IngestaoRespostaPlanilha {
 		//Properties prop = new Properties();
 		//prop.load(input);
 		//UrlLoopback = prop.getProperty("loopback.url");
-		UrlLoopback = "http://localhost:25002/api";
+		UrlLoopback = "http://vps-40d69db1.vps.ovh.ca:25002/api";
 		DaoBaseComum.setUrl(UrlLoopback);
 	}
 
